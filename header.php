@@ -30,16 +30,16 @@
 				</svg>
 		  	</div>
 		  	<div class="cont_mob">
+				<li class="menu-item menu_home">
+					<a href="<?php echo site_url(); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/logo.png"></a>
+				</li>
 				<?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
 			</div>
 		</nav>
 
 		<nav id="menu">
 			<li class="menu-item menu_home">
-				<a class="logo_menu" href="<?php echo site_url(); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/snap_logo.svg"></a>
-				<div class="logo_menu_home">
-					<a href="<?php echo site_url(); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/logo.png"></a>
-				</div>
+				<a href="<?php echo site_url(); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/logo.png"></a>
 			</li>
 			<?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
 		</nav>

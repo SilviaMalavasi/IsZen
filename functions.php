@@ -23,7 +23,7 @@ add_action( 'after_setup_theme', 'iszen_init' );
 function iszen_scripts() {
 	wp_enqueue_style('iszen-style', get_template_directory_uri() . '/style.css', array(), filemtime(get_template_directory() . '/style.css'), false); 
 	wp_enqueue_script( 'jquery' );
-	wp_enqueue_script( 'mobile', get_template_directory_uri() . '/js/mobile.js', array(), '1.0.0', true );
+	wp_enqueue_script( 'mobile', get_template_directory_uri() . '/js/site.js', array(), '1.0.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'iszen_scripts' );
 
