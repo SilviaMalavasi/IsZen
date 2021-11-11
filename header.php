@@ -31,12 +31,6 @@
 		  	</div>
 		  	<div class="cont_mob">
 				<?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
-				<div id="mob_search">
-					<form action="/" method="get">
-					    <input type="image" alt="Search" src="<?php bloginfo( 'template_url' ); ?>/assets/search.svg" />
-					    <input type="text" name="s" id="search" placeholder="search... " value="<?php the_search_query(); ?>" />
-					</form>
-				</div>
 			</div>
 		</nav>
 
@@ -48,7 +42,6 @@
 				</div>
 			</li>
 			<?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
-			<div id="search"><?php get_search_form(); ?></div>
 		</nav>
 
 	</header>
