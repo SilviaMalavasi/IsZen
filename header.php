@@ -15,36 +15,40 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'iszen' ); ?></a>
 
-		<header id="header">
+	<header id="header">
 
 		<nav role="navigation" id="menu_mobile">
-		  <div id="menuToggle">
-	    	<span class="burger"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-   				<rect width="100" height="12" rx="8"></rect>
-			</svg></span>
-	    	<span class="burger"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-   				<rect width="100" height="12" rx="8"></rect>
-			</svg></span>
-	    	<span class="burger"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-   				<rect width="100" height="12" rx="8"></rect>
-			</svg></span>
-			<div class="cont_mob">
-				<div class="cont_mob_inner">
-					<div id="the_search">
-						<form action="/" method="get">
-						    <input type="image" alt="Search" src="<?php bloginfo( 'template_url' ); ?>/assets/search.svg" />
-						    <input type="text" name="s" id="search" placeholder="search... " value="<?php the_search_query(); ?>" />
-						</form>
-					</div>
-					<?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
+			<div id="menuToggle">
+	    		<svg viewBox="0 0 100 100" width="100%" height="100%" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+   					<rect width="100" height="40" rx="10"></rect>
+				</svg>
+	    		<svg viewBox="0 0 100 100" width="100%" height="100%" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+   					<rect width="100" height="40" rx="10"></rect>
+				</svg>
+	    		<svg viewBox="0 0 100 100" width="100%" height="100%" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+   					<rect width="100" height="40" rx="10"></rect>
+				</svg>
+		  	</div>
+		  	<div class="cont_mob">
+				<?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
+				<div id="mob_search">
+					<form action="/" method="get">
+					    <input type="image" alt="Search" src="<?php bloginfo( 'template_url' ); ?>/assets/search.svg" />
+					    <input type="text" name="s" id="search" placeholder="search... " value="<?php the_search_query(); ?>" />
+					</form>
 				</div>
 			</div>
-		  </div>
 		</nav>
 
 		<nav id="menu">
-			<div id="search"><?php get_search_form(); ?></div>
+			<li class="menu-item menu_home">
+				<a class="logo_menu" href="<?php echo site_url(); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/snap_logo.svg"></a>
+				<div class="logo_menu_home">
+					<a href="<?php echo site_url(); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/snap_home.svg"></a>
+				</div>
+			</li>
 			<?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
+			<div id="search"><?php get_search_form(); ?></div>
 		</nav>
 
 	</header>
