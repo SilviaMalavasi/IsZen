@@ -218,7 +218,6 @@ input[type='checkbox']:checked:after {
     padding-bottom: 12vh;
     background: var(--blu);
     list-style-type: none;
-    -webkit-font-smoothing: antialiased;
     transform-origin: 100% 50%;
     transform: translate(0, 0) scaleX(0);
     transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
