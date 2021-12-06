@@ -20,19 +20,19 @@
 	  };
 	});
 
-
-	$('#menu_mobile li.menu-item-has-children').on("touchstart click", function (e) {
-	  var link = $(this);
-	  if (link.hasClass('hover')) {
-	    link.removeClass('hover');
-	 } 
-	else {
-	   link.addClass('hover');
-	   $('ul > li').not(this).removeClass('hover');
-	   e.preventDefault();
-	   return false;
-	  }
-	});
+	$('#menu_mobile li.menu-item-has-children>a').on("touchstart click tap", function (e) {
+		var link = $(this).parent();
+		if (link.hasClass('hover')) {
+		  link.removeClass('hover');
+		} 
+		else {
+		  link.addClass('hover');
+		  $('.hover').not(link).removeClass('hover');
+		  e.preventDefault();
+		  return false;
+		}
+	  });
+	  
 
 })(jQuery);
 
