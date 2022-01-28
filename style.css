@@ -15,6 +15,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{di
 :root {
 	font-size: calc(2vh + ((1vw - 10.24px) * 0.03));
 	font-family: sans-serif;
+	-webkit-font-smoothing: antialiased;
 	line-height: 1em;
 	font-weight: 400;
 	color: #000000;
