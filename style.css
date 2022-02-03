@@ -96,9 +96,7 @@ input[type='checkbox']:checked:after {
     left: 0.07rem;
 	color: #99a1a7;
 }
-.site {
-	width: 100%;
-}
+
 
 /* Menù */
 
@@ -306,11 +304,18 @@ input[type='checkbox']:checked:after {
 	height: auto;
 }
 
+
+
 /* Sito */
 
+.site {
+	width: 100%;
+}
 .site .wp-block-image {
 	margin: 0;
 }
+
+
 
 /* Media queries */
 
