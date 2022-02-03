@@ -20,8 +20,6 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{di
 	font-weight: 400;
 	color: #000000;
  	background-color: #fff;
-	 --cont_mob_width: 65vw;
-	 --menu_right: 5vw;
 	 --burger_width: 3rem;
 	 --burger_height: 0.8rem;
 }
@@ -217,14 +215,14 @@ input[type='checkbox']:checked:after {
 	position: relative;
     padding-top: 7rem;
     padding-bottom: 12vh;
-    background: var(--blu);
     list-style-type: none;
+    -webkit-font-smoothing: antialiased;
     transform-origin: 100% 50%;
     transform: translate(0, 0) scaleX(0);
     transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
     width: 100vw;
     z-index: 100;
-	background: #000;
+	background: lightgrey;
 }
 #menu_mobile .cont_mob.open_cont {
 	transform: none;
