@@ -331,10 +331,5 @@ input[type='checkbox']:checked:after {
 	width: 10vw;
 	margin-left: 5vw;
 }
-.site .wp-block-columns {
-	flex-wrap: wrap;
-}
-.site .wp-block-column {
-	flex: 0 0 100% !important;
-}
+
 }
