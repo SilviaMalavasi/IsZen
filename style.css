@@ -13,12 +13,12 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{di
 /* Tipografia */
 
 :root {
-	font-size: calc(2vh + ((1vw - 10.24px) * 0.03));
+    font-size: calc((1vh + 4vw) * 0.217);
 	font-family: sans-serif;
 	-webkit-font-smoothing: antialiased;
 	line-height: 1em;
 	font-weight: 400;
-	color: #000000;
+	color: #000;
  	background-color: #fff;
 	 --burger_width: 3rem;
 	 --burger_height: 0.8rem;
@@ -41,7 +41,7 @@ h4 {
 }
 p {
 	font-size: 1rem;
-	line-height: 1.1em;
+	line-height: 1.1rem;
 	padding-bottom: 0.8rem;
 }
 a {
@@ -53,8 +53,8 @@ a {
 	text-decoration: underline;
 }
 li {
-	line-height: 1em;
-	font-size: 1.05rem;
+	line-height: 1rem;
+	font-size: 1rem;
 	padding-bottom: 1.2rem;
 }
 li a {
@@ -330,6 +330,28 @@ input[type='checkbox']:checked:after {
 .menu-item.menu_home {
 	width: 10vw;
 	margin-left: 5vw;
+}
+
+}
+
+
+/* Tablets */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+
+:root {
+	font-size: 2vw;
+}
+
+}
+
+
+/* Phones */
+
+@media screen and (max-width: 767px) {
+
+:root {
+	font-size: 4vw;
 }
 
 }
