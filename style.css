@@ -16,27 +16,39 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{di
     font-size: calc((1vh + 4vw) * 0.217);
 	font-family: sans-serif;
 	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'kern';
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
 	line-height: 1em;
 	font-weight: 400;
 	color: #000;
  	background-color: #fff;
-	 --burger_width: 3rem;
-	 --burger_height: 0.8rem;
+	--burger_width: 3rem;
+	--burger_height: 0.8rem;
+	--grey:  #efefef;
 }
 h1 {
 	font-size: 3rem;
+	line-height: 3rem;
 	padding-bottom: 2rem;
 }
 h2 {
 	font-size: 2.5rem;
+	line-height: 2.5rem;
 	padding-bottom: 2rem;
 }
 h3 {
 	font-size: 1.5rem;
+	line-height: 1.5rem;
 	padding-bottom: 2rem;
 }
 h4 {
 	font-size: 1.15rem;
+	line-height: 1.15rem;
 	padding-bottom: 1.5rem;
 }
 p {
@@ -53,8 +65,8 @@ a {
 	text-decoration: underline;
 }
 li {
-	line-height: 1rem;
 	font-size: 1rem;
+	line-height: 1rem;
 	padding-bottom: 1.2rem;
 }
 li a {
@@ -68,7 +80,7 @@ em {
 }
 input, textarea, input:focus, textarea:focus {
 	border: none;
-	background: #efefef;
+	background: var(--grey);
 	resize: none;
     outline: none;
 	font-family: sans-serif;
@@ -79,10 +91,11 @@ input, textarea, input:focus, textarea:focus {
 input[type='checkbox'] {
 	padding: 0;
     border-radius: 0.2rem;
+	border: 1px solid black;
+	background: #fff;
     margin: 0;
     width: 0.9rem;
     height: 0.9rem;
-    background: var(--grigio_chiaro);
     appearance: none;
     -moz-appearance: none;
 	-webkit-appearance: none;
@@ -156,13 +169,14 @@ input[type='checkbox']:checked:after {
 .current-menu-item a	{
 	border-bottom: 0.5rem solid;
 }
-.menu-item.menu_home {
+.menu-item.menu-home {
 	width: 5vw;
 }
 
-/* Menù mobile */
 
-#menu_mobile {
+/* Burger menù */
+
+#burger-menu {
 	display: none;
 	position: absolute;
 	top: 0;
@@ -193,23 +207,23 @@ input[type='checkbox']:checked:after {
 							background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
 							opacity 0.55s ease;
 }
-#menuToggle.open_menu svg:nth-of-type(1) {
+#menuToggle.open-menu svg:nth-of-type(1) {
 	transform: rotate(45deg);
 }
-#menuToggle.open_menu svg:nth-of-type(2) {
+#menuToggle.open-menu svg:nth-of-type(2) {
 	opacity: 0;
 	transform: rotate(0deg) scale(0.2, 0.2);
 }
-#menuToggle.open_menu svg:nth-of-type(3) {
+#menuToggle.open-menu svg:nth-of-type(3) {
 	transform: translate(calc(var(--burger_height)/3*-1), calc(var(--burger_height)/1.5)) rotate(-45deg);
 }
 #menuToggle svg rect{
 	fill: #000;
 }
-#menuToggle.open_menu svg rect{
+#menuToggle.open-menu svg rect{
 	fill: #fff;
 }
-#menu_mobile .cont_mob {
+#burger-menu .cont-mob {
 	position: relative;
     padding-top: 7rem;
     padding-bottom: 12vh;
@@ -222,26 +236,26 @@ input[type='checkbox']:checked:after {
     z-index: 100;
 	background: lightgrey;
 }
-#menu_mobile .cont_mob.open_cont {
+#burger-menu .cont-mob.open-cont {
 	transform: none;
 }
-#menu_mobile .cont_mob a, #menu_mobile .cont_mob p {
+#burger-menu .cont-mob a, #burger-menu .cont-mob p {
 	color: #fff;
 }
-#menu_mobile ul {
+#burger-menu ul {
 	list-style:none;
 }
-#menu_mobile li {
+#burger-menu li {
 	list-style:none;
 	padding-bottom: 1rem;
 	text-transform: uppercase;
     font-weight: 700;
     font-size: 1.8rem;
 }
-#menu_mobile li a {
+#burger-menu li a {
 	margin-left: 5vw;
 }
-#menu_mobile li.search {
+#burger-menu li.search {
 	margin-left: 6vw;
 }
 #menuToggle .sub-menu {
@@ -252,22 +266,22 @@ input[type='checkbox']:checked:after {
 	transform: scaleY(1);
 	height: auto;
 }
-#mob_search {
+#burger-search {
 	display: inline-block;
 }
-#mob_search {
+#burger-search {
 	margin-left: 6vw;
 }
-#mob_search {
+#burger-search {
 		padding-top: 0.4rem;
 }
-#mob_search input[type="image"] {
+#burger-search input[type="image"] {
 	float: left;
 	box-sizing: border-box;
 	width: 1.3rem;
 	height: 1.3rem;
 }
-#mob_search input[type="text"], #mob_search input[type="text"]:focus {
+#burger-search input[type="text"], #burger-search input[type="text"]:focus {
 	float: left;
 	box-sizing: border-box;
 	border: 0;
@@ -279,19 +293,19 @@ input[type='checkbox']:checked:after {
 	font-size: 1rem;
 	outline: 0;
 }
-#mob_search input[type="text"]::-webkit-input-placeholder {
+#burger-search input[type="text"]::-webkit-input-placeholder {
 	color: #fff;
 	font-size: 1rem;
 }
-#mob_search input[type="text"]::-moz-placeholder { 
+#burger-search input[type="text"]::-moz-placeholder { 
 	color: #fff;
 	font-size: 1rem;
 }
-#mob_search input[type="text"]:-ms-input-placeholder { 
+#burger-search input[type="text"]:-ms-input-placeholder { 
 	color: #fff;
 	font-size: 1rem;
 }
-#mob_search input[type="text"]:-moz-placeholder { 
+#burger-search input[type="text"]:-moz-placeholder { 
 	color: #fff;
 	font-size: 1rem;
 }
@@ -306,38 +320,20 @@ input[type='checkbox']:checked:after {
 
 
 
-/* Sito */
+/* Fix */
 
 .site {
 	width: 100%;
 }
 .site .wp-block-image {
-	margin: 0;
+	margin-bottom: 0;
 }
 
 
 
-/* Media queries */
+/* Media queries - Tablets portrait */
 
-@media screen and (max-width: 992px) {
-
-#menu_mobile {
-	display: block;
-}
-#menu {
-	display: none;
-}
-.menu-item.menu_home {
-	width: 10vw;
-	margin-left: 5vw;
-}
-
-}
-
-
-/* Tablets */
-
-@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+@media screen and (min-width: 783px) and (max-width: 1024px) and (orientation: portrait) {
 
 :root {
 	font-size: 2vw;
@@ -346,9 +342,9 @@ input[type='checkbox']:checked:after {
 }
 
 
-/* Phones */
+/* Media queries - Phones */
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width:782px), screen and (max-width: 812px) and (-webkit-min-device-pixel-ratio: 3)  {
 
 :root {
 	font-size: 4vw;

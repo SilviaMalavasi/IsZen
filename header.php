@@ -17,7 +17,7 @@
 
 	<header id="header">
 
-		<nav role="navigation" id="menu_mobile">
+		<nav role="navigation" id="burger-menu">
 			<div id="menuToggle">
 	    		<svg viewBox="0 0 100 100" width="100%" height="100%" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
    					<rect width="100" height="40"></rect>
@@ -29,8 +29,8 @@
    					<rect width="100" height="40"></rect>
 				</svg>
 		  	</div>
-		  	<div class="cont_mob">
-				<li class="menu-item menu_home">
+		  	<div class="cont-mob">
+				<li class="menu-item menu-home">
 					<a href="<?php echo site_url(); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/logo.png"></a>
 				</li>
 				<?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
@@ -38,7 +38,7 @@
 		</nav>
 
 		<nav id="menu">
-			<li class="menu-item menu_home">
+			<li class="menu-item menu-home">
 				<a href="<?php echo site_url(); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/logo.png"></a>
 			</li>
 			<?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
