@@ -59,17 +59,17 @@ add_filter('wp_nav_menu_items', 'iszen_add_search_form', 10, 2);
 
 
 
-/* Add slug to post_class() */
+/* Add slug to body_class() */
 
-function add_post_class($classes) {
-    $additional = get_post_field( 'post_name', get_post() );
+function add_slug_class($classes) {
+    $additional = 'page-slug-'.get_post_field( 'post_name', get_post() );
     foreach ($classes as $class) {
         array_push($classes , $additional);
         break;
     }
     return $classes;
 }
-add_filter('post_class', 'add_post_class');
+add_filter('body_class', 'add_slug_class');
 
 
 /* Better read more/excerpt more */
