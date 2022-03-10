@@ -3,7 +3,7 @@ Theme Name: iszen
 Author: Silvia Malavasi
 Description: basic blank developer theme
 Text Domain: iszen
-Version: 1.1.6
+Version: 1.1.7
 */
 
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}img{display:block;}
@@ -27,8 +27,6 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{di
 	font-weight: 400;
 	color: #000;
  	background-color: #fff;
-	--burger_width: 3rem;
-	--burger_height: 0.8rem;
 	--grey:  #efefef;
 }
 h1 {
@@ -89,27 +87,27 @@ input, textarea, input:focus, textarea:focus {
 	width: 100%;
 }
 input[type='checkbox'] {
-	padding: 0;
-    border-radius: 0.2rem;
-	border: 1px solid black;
-	background: #fff;
+    padding: 0;
+    border-radius: 0.3rem;
+    border: none;
+    background: #fff;
     margin: 0;
-    width: 0.9rem;
-    height: 0.9rem;
+    width: 0.8rem;
+    height: 0.8rem;
     appearance: none;
     -moz-appearance: none;
-	-webkit-appearance: none;
+    -webkit-appearance: none;
     margin-right: 0.2rem;
+    background: var(--grey);
 }
 input[type='checkbox']:checked:after {
-    content: '\2714';
+	content: '\2714';
     font-size: 0.7rem;
-    position: absolute;
-    top: 0px;
-    left: 0.07rem;
-	color: #99a1a7;
+	line-height: 0.8rem;
+    margin-left: 0.16rem;
+	color: blue;
+	position: absolute;
 }
-
 
 /* Menù */
 
@@ -181,6 +179,7 @@ input[type='checkbox']:checked:after {
 	position: absolute;
 	top: 0;
 	right: 0;
+	height: 0;
 }
 #menuToggle {
 	display: block;
@@ -191,38 +190,32 @@ input[type='checkbox']:checked:after {
 	user-select: none;
 	z-index: 5000;
 	cursor: pointer;
-	width: var(--burger_width);
-	height: var(--burger_width);
 	margin-top: 4vh;
     margin-right: 5vw;
 }
-#menuToggle svg {
-	display: block;
-	width: var(--burger_width);
-	height: var(--burger_height);
+#menuToggle div {
 	position: relative;
-	z-index: 1;
-	transform-origin: 0px 0px;
-	transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-							background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-							opacity 0.55s ease;
+	width: 3rem;
+	height: 7px;
+	border-radius: 0.5rem;
+	background-color: #f8982b;
+	margin-top: 8px;
+	transition: all 0.3s ease-in-out;
 }
-#menuToggle.open-menu svg:nth-of-type(1) {
+#menuToggle.open-menu .top-line {
+	transform: rotate(-45deg);
+	margin-top: 25px;
+}
+#menuToggle.open-menu .bottom-line {
+	opacity: 0;
 	transform: rotate(45deg);
 }
-#menuToggle.open-menu svg:nth-of-type(2) {
-	opacity: 0;
-	transform: rotate(0deg) scale(0.2, 0.2);
+#menuToggle.open-menu .medium-line {
+	transform: rotate(45deg);
+	margin-top: -7px;
 }
-#menuToggle.open-menu svg:nth-of-type(3) {
-	transform: translate(calc(var(--burger_height)/3*-1), calc(var(--burger_height)/1.5)) rotate(-45deg);
-}
-#menuToggle svg rect{
-	fill: #000;
-}
-#menuToggle.open-menu svg rect{
-	fill: #fff;
-}
+
+
 #burger-menu .cont-mob {
 	position: relative;
     padding-top: 7rem;
@@ -320,13 +313,19 @@ input[type='checkbox']:checked:after {
 
 
 
-/* Fix */
+/* Site */
 
 .site {
 	width: 100%;
 }
 .site .wp-block-image {
 	margin-bottom: 0;
+}
+.site.open-menu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
 }
 
 
@@ -338,16 +337,28 @@ input[type='checkbox']:checked:after {
 :root {
 	font-size: 2vw;
 }
+#menu {
+	display: none;
+}
+#burger-menu {
+	display: block;
+}
 
 }
 
 
 /* Media queries - Phones */
 
-@media screen and (max-width:782px), screen and (max-width: 812px) and (-webkit-min-device-pixel-ratio: 3)  {
+@media screen and (max-width:782px)  {
 
 :root {
 	font-size: 4vw;
+}
+#menu {
+	display: none;
+}
+#burger-menu {
+	display: block;
 }
 
 }

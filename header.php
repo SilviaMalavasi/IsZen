@@ -19,15 +19,9 @@
 
 		<nav role="navigation" id="burger-menu">
 			<div id="menuToggle">
-	    		<svg viewBox="0 0 100 100" width="100%" height="100%" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-   					<rect width="100" height="40"></rect>
-				</svg>
-	    		<svg viewBox="0 0 100 100" width="100%" height="100%" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-   					<rect width="100" height="40"></rect>
-				</svg>
-	    		<svg viewBox="0 0 100 100" width="100%" height="100%" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-   					<rect width="100" height="40"></rect>
-				</svg>
+				<div class="top-line"></div>
+				<div class="medium-line"></div>
+				<div class="bottom-line"></div>
 		  	</div>
 		  	<div class="cont-mob">
 				<li class="menu-item menu-home">
