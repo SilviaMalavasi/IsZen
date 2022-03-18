@@ -8,6 +8,7 @@ define('theme_version', $theme->Version);
 function iszen_init() {
 	load_theme_textdomain( 'iszen', get_template_directory() . '/languages' );
 	add_theme_support( 'responsive-embeds' );
+	add_theme_support( 'block-templates' );
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 1568, 9999 );
 	add_theme_support( 'title-tag' );
@@ -32,7 +33,7 @@ add_action( 'wp_enqueue_scripts', 'iszen_scripts' );
 /* Dashboard style */
 
 function iszen_dashboard_style() {
-	wp_enqueue_style( 'iszen_dashboard_style', get_template_directory_uri() . '/style_dashboard.css' );
+	wp_enqueue_style( 'iszen_dashboard_style', get_template_directory_uri() . '/style-dashboard.css' );
 }
 
 add_action('admin_head', 'iszen_dashboard_style'); 

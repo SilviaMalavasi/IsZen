@@ -2,9 +2,9 @@
 
 /* JS Media Queries */
 
-const mediaQueryAllMobile = window.matchMedia('(max-width: 1024px) and (orientation: portrait)') || window.matchMedia('(max-width: 813px)');
-const mediaQueryTablets = window.matchMedia('(min-width: 783px) and (max-width: 1024px) and (orientation: portrait)');
-const mediaQueryPhones = window.matchMedia('(max-width:782px)');
+const mediaQueryAllMobile = window.matchMedia('(max-width: 1024px) and (orientation: portrait)') || window.matchMedia('(max-width: 813px)').matches;
+const mediaQueryTablets = window.matchMedia('(min-width: 783px) and (max-width: 1024px) and (orientation: portrait)').matches;
+const mediaQueryPhones = window.matchMedia('(max-width:782px)').matches;
 
 
 /* Burger menù */
