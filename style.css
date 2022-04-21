@@ -245,7 +245,7 @@ input[type='checkbox']:checked:after {
 }
 #menuToggle.open-menu .medium-line {
 	transform: rotate(45deg);
-	margin-top: -3.5px;
+	margin-top: -4.8px;
 }
 
 
