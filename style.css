@@ -147,6 +147,9 @@ input[type='checkbox']:checked:after {
 
 /* Menù */
 
+#burger-menu {
+	display: none;
+}
 #menu {
 	display: block;
 	padding-top: 6.7vh;
@@ -204,11 +207,42 @@ input[type='checkbox']:checked:after {
 	width: 5vw;
 }
 
+.site.open-menu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+
+/* Site */
+
+.site {
+	width: 100%;
+}
+.wp-block-image {
+	margin-bottom: 0;
+}
+
+
+
+
+/* Media queries - Phones */
+
+@media screen and (max-width:782px), screen and (max-width: 1024px) and (orientation: portrait)  {
+
+:root {
+	font-size: 4vw;
+}
 
 /* Burger menù */
 
-#burger-menu {
+#menu {
 	display: none;
+}
+
+#burger-menu {
+	display: block;
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -247,7 +281,6 @@ input[type='checkbox']:checked:after {
 	transform: rotate(45deg);
 	margin-top: -4.8px;
 }
-
 
 #burger-menu .cont-mob {
 	position: relative;
@@ -297,41 +330,6 @@ input[type='checkbox']:checked:after {
 	transform: scaleY(1);
 	height: auto;
 }
-
-.site.open-menu {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-}
-
-
-/* Site */
-
-.site {
-	width: 100%;
-}
-.site .wp-block-image {
-	margin-bottom: 0;
-}
-
-
-
-
-/* Media queries - Phones */
-
-@media screen and (max-width:782px)  {
-
-:root {
-	font-size: 4vw;
-}
-#menu {
-	display: none;
-}
-#burger-menu {
-	display: block;
-}
-
 }
 
 
