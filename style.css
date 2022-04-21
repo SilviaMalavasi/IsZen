@@ -228,11 +228,11 @@ input[type='checkbox']:checked:after {
 }
 #menuToggle div {
 	position: relative;
-	width: 3rem;
-	height: 7px;
+	width: 12vw;
+	height: 4px;
 	border-radius: 0.5rem;
-	background-color: #f8982b;
-	margin-top: 8px;
+	background-color: black;
+	margin-top: 6px;
 	transition: all 0.3s ease-in-out;
 }
 #menuToggle.open-menu .top-line {
@@ -245,7 +245,7 @@ input[type='checkbox']:checked:after {
 }
 #menuToggle.open-menu .medium-line {
 	transform: rotate(45deg);
-	margin-top: -7px;
+	margin-top: -3.5px;
 }
 
 
@@ -318,23 +318,6 @@ input[type='checkbox']:checked:after {
 
 
 
-/* Media queries - Tablets portrait */
-
-@media screen and (min-width: 783px) and (max-width: 1024px) and (orientation: portrait) {
-
-:root {
-	font-size: 2vw;
-}
-#menu {
-	display: none;
-}
-#burger-menu {
-	display: block;
-}
-
-}
-
-
 /* Media queries - Phones */
 
 @media screen and (max-width:782px)  {
@@ -347,6 +330,26 @@ input[type='checkbox']:checked:after {
 }
 #burger-menu {
 	display: block;
+}
+
+}
+
+
+/* Media queries - Tablets portrait */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+
+:root {
+	font-size: 2vw;
+}
+#menu {
+	display: none;
+}
+#burger-menu {
+	display: block;
+}
+#menuToggle div {
+    width: 5vw;
 }
 
 }
