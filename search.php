@@ -10,11 +10,11 @@
 <?php else : ?>
 <article id="post-0" class="post no-results not-found">
 <header class="header">
-<h1 class="entry-title"><?php esc_html_e( 'Nothing Found', 'iszen' ); ?></h1>
+<h1 class="entry-title"><?php esc_html_e( 'Nothing Found', 'mirai' ); ?></h1>
 </header>
 <div class="entry-content">
-<p><?php esc_html_e( 'Sorry, nothing matched your search. Please try again.', 'iszen' ); ?></p>
-<?php get_search_form(); ?>
+<h4>Pagina non trovata</h4><p>Prova un'altra ricerca o torna alla <a href="' . <?php site_url() ?> . '">home</a><p>
+
 </div>
 </article>
 <?php endif; ?>
