@@ -265,7 +265,6 @@ input[type='checkbox']:checked:after {
 }
 
 #burger-menu {
-	display: none;
 	position: absolute;
 	top: 0;
 	right: 0;
