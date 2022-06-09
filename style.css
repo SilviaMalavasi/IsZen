@@ -220,7 +220,7 @@ input[type='checkbox']:checked:after {
 
 /* Burger menù on desktop */
 
-#menu {
+/* #menu {
 	display: none;
 }
 #burger-menu {
@@ -231,7 +231,7 @@ input[type='checkbox']:checked:after {
 	top: 0;
 	left: 0;
 	width: 100%;
-}
+} */
 
 
 /* Site */
@@ -371,6 +371,18 @@ input[type='checkbox']:checked:after {
 }
 #menuToggle div {
     width: 5vw;
+}
+
+.wp-block-columns.stack-tablet {
+    -ms-flex-wrap: wrap!important;
+        flex-wrap: wrap!important;
+}
+.stack-tablet.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column:not(:only-child) {
+    -ms-flex-preferred-size: 100%!important;
+        flex-basis: 100%!important;
+}
+.stack-tablet.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column:not(:first-child) {
+    margin-left: 0;
 }
 
 }
