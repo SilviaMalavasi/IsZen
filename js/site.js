@@ -2,12 +2,11 @@
 
 /* JS Media Queries */
 
-const mediaQueryAllMobile = window.matchMedia('(max-width: 1024px) and (orientation: portrait)') || window.matchMedia('(max-width: 813px)').matches;
-const mediaQueryTablets = window.matchMedia('(min-width: 783px) and (max-width: 1024px) and (orientation: portrait)').matches;
-const mediaQueryPhones = window.matchMedia('(max-width:782px)').matches;
-
-
-/* Burger menù */
+const mediaQueryAllMobile = window.matchMedia('(max-width: 1024px) and (orientation: portrait)').matches || window.matchMedia('(max-width: 800px)').matches;
+const mediaQueryPhonesAndSmallTablets = window.matchMedia('(max-width: 800px)').matches;
+const mediaQueryPhones = window.matchMedia('(max-width:600px)').matches;
+const vw = window.innerWidth * 0.01;
+let vh = window.innerHeight * 0.01;
 
 
 /* Burger menù */
@@ -48,6 +47,17 @@ $('#burger-menu li.menu-item-has-children').on("touchstart click", function (e) 
 });
 
 
+$(function(){
+
+    document.documentElement.style.setProperty('--vh', vh + "px");
+    let rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
+
+    /* 1rem rounded */
+
+    let onerem = parseInt(rem * 1);
+    document.documentElement.style.setProperty('--onerem', onerem + "px");
+
+});
 
 })(jQuery);
 

@@ -3,7 +3,7 @@ Theme Name: iszen
 Author: Silvia Malavasi
 Description: basic blank developer theme
 Text Domain: iszen
-Version: 1.1.7
+Version: 1.1.8
 */
 
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}img{display:block;}
@@ -63,59 +63,59 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{di
 	font-weight: 400;
 	color: #000;
  	background-color: #fff;
-	--font-size-1: 3rem;
-	--line-height-1: 3rem;
-	--font-size-2: 2.5rem;
-	--line-height-2: 2.5rem;
-	--font-size-3: 1.5rem;
-	--line-height-3: 1.5rem;
-	--font-size-4: 1.15rem;
-	--line-height-4: 1.15rem;
-	--font-size-p: 1rem;
-	--line-height-p: 1.1rem;
-	--font-size-min: 0.8rem;
-	--line-height-min: 0.8rem;
+	 --font-size-82pt: 4.3rem;  
+	 --line-height-82pt: 5rem;
+	 --font-size-62pt: 3.3rem;
+	 --line-height-62pt: 4rem;
+	 --font-size-42pt: 2.25rem;  
+	 --line-height-42pt: 2.8rem;
+	 --font-size-34pt: 1.8rem; 
+	 --line-height-34pt: 2.2rem;
+	 --font-size-24pt: 1.15rem;
+	 --line-height-24pt: 1.4rem;
+	 --font-size-min: max(14px, 0.8rem);
+	 --line-height-min: max(14px, 0.8rem);
+	 --padding-piccolo: 6vw;
+	 --wp--style--block-gap: 2vw;
 	--padding-piccolo: 5vw;
 	--padding-grande: 14vw;
 	--wp--style--block-gap: 2vw;
-	--grey:  #efefef;
-
+	--grigio:  #efefef;
+	--rosso: #d0233e;
+	--nero: #282833;
 }
 h1 {
-	font-size:var(--font-size-1);
-	line-height: var(--line-height-1);
+	font-size:var(--font-size-82pt);
+	line-height: var(--line-height-82pt);
 	padding-bottom: 2rem;
 }
 h2 {
-	font-size:var(--font-size-2);
-	line-height: var(--line-height-2);
+	font-size:var(--font-size-62pt);
+	line-height: var(--line-height-62pt);
 	padding-bottom: 2rem;
 }
 h3 {
-	font-size:var(--font-size-3);
-	line-height: var(--line-height-3);
+	font-size:var(--font-size-42pt);
+	line-height: var(--line-height-42pt);
 	padding-bottom: 2rem;
 }
 h4 {
-	font-size:var(--font-size-4);
-	line-height: var(--line-height-4);
+	font-size:var(--font-size-34pt);
+	line-height: var(--line-height-34pt);
 	padding-bottom: 1.5rem;
 }
 p {
-	font-size: var(--font-size-p);
-	line-height: var(--line-height-p);
+	font-size: var(--font-size-24pt);
+	line-height: var(--line-height-24pt);
 	padding-bottom: 0.8rem;
 }
 a {
 	text-decoration: none;
 	color: inherit;
 }
-#content a {
-	text-decoration: underline;
-}
 li {
-	font-size: var(--font-size-p);
-	line-height: var(--line-height-p);
+	font-size: var(--font-size-24pt);
+	line-height: var(--line-height-24pt);
 	padding-bottom: 1.2rem;
 }
 strong, bold {
@@ -126,7 +126,7 @@ em {
 }
 input, textarea, input:focus, textarea:focus {
 	border: none;
-	background: var(--grey);
+	background: var(--grigio);
 	resize: none;
     outline: none;
 	font-family: 'Roboto', sans-serif;
@@ -135,27 +135,43 @@ input, textarea, input:focus, textarea:focus {
 	padding: 0.85rem 1.3rem;
 	width: 100%;
 }
+input[type='submit'], input[type='submit']:focus {
+    width: auto;
+}
 input[type='checkbox'] {
     padding: 0;
     border-radius: 0.3rem;
     border: none;
     background: #fff;
     margin: 0;
-    width: 0.8rem;
-    height: 0.8rem;
+    width: 1rem;
+    height: 1rem;
     appearance: none;
     -moz-appearance: none;
     -webkit-appearance: none;
     margin-right: 0.2rem;
-    background: var(--grey);
+    background: var(--grigio);
 }
 input[type='checkbox']:checked:after {
-	content: '\2714';
-    font-size: 0.7rem;
-	line-height: 0.8rem;
-    margin-left: 0.16rem;
-	color: blue;
-	position: absolute;
+    content: '\2714';
+    font-size: 1rem;
+    line-height: 1rem;
+    margin-left: 0.05rem;
+    color: var(--rosso);
+    position: absolute;
+    margin-bottom: 0;
+}
+select {
+    width: 100%;
+    font-size: 1rem;
+    border: 0;
+    padding: 0.85rem;
+	appearance: none;
+    background-color: var(--grigio);
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
 }
 
 /* Menù */
@@ -247,9 +263,9 @@ input[type='checkbox']:checked:after {
 
 
 
-/* Media queries - Phones */
+/* Media queries - Smartphones e Tablet piccoli */
 
-@media screen and (max-width:782px), screen and (max-width: 1024px) and (orientation: portrait)  {
+@media screen and (max-width: 800px) and (orientation: portrait)  {
 
 :root {
 	font-size: 4vw;
@@ -284,10 +300,10 @@ input[type='checkbox']:checked:after {
 }
 #menuToggle div {
 	position: relative;
-	width: 12vw;
+	width: 7vw;
 	height: 4px;
 	border-radius: 0.5rem;
-	background-color: black;
+	background-color: white;
 	margin-top: 6px;
 	transition: all 0.3s ease-in-out;
 }
@@ -315,7 +331,9 @@ input[type='checkbox']:checked:after {
     transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
     width: 100vw;
     z-index: 100;
-	background: lightgrey;
+	background: var(--nero);
+    height: 100vh;
+    height: calc(var(--vh) * 100);
 }
 #burger-menu .cont-mob.open-cont {
 	transform: none;
@@ -331,7 +349,9 @@ input[type='checkbox']:checked:after {
 	padding-bottom: 1rem;
 	text-transform: uppercase;
     font-weight: 700;
-    font-size: 1.8rem;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    padding-bottom: 1.3rem;
 }
 #burger-menu li a {
 	margin-left: 5vw;
@@ -355,33 +375,33 @@ input[type='checkbox']:checked:after {
 }
 
 
-/* Media queries - Tablets portrait */
 
-@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+/* Media queries - Solo Smartphones */
+
+@media screen and (max-width:600px)  {
 
 :root {
 	font-size: 2vw;
 }
-#menu {
-	display: none;
-}
-#burger-menu {
-	display: block;
-}
-#menuToggle div {
-    width: 5vw;
 }
 
+
+/* Media queries - Solo Tablets grandi */
+
+@media screen and (min-width: 1024px) and (orientation: portrait) {
+
+:root {
+	font-size: 1vw;
+}
 .wp-block-columns.stack-tablet {
-    -ms-flex-wrap: wrap!important;
-        flex-wrap: wrap!important;
+   	-ms-flex-wrap: wrap!important;
+    flex-wrap: wrap!important;
 }
 .stack-tablet.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column:not(:only-child) {
-    -ms-flex-preferred-size: 100%!important;
-        flex-basis: 100%!important;
+   	-ms-flex-preferred-size: 100%!important;
+    flex-basis: 100%!important;
 }
 .stack-tablet.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column:not(:first-child) {
-    margin-left: 0;
+   	margin-left: 0;
 }
-
 }
