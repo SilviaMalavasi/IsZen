@@ -268,17 +268,20 @@ select {
     margin-right: 5vw;
 }
 #menuToggle div {
-	position: relative;
-	width: 2vw;
-	height: 4px;
-	border-radius: 0.5rem;
-	background-color: white;
-	margin-top: 6px;
+    position: relative;
+    width: 1.2vw;
+    height: 0.1vw;
+    border-radius: 0.1vw;
+    background-color: white;
+	margin-top: 0.2vw;
 	transition: all 0.3s ease-in-out;
+}
+#menuToggle div.top-line {
+    margin-top: 1vw;
 }
 #menuToggle.open-menu .top-line {
 	transform: rotate(-45deg);
-	margin-top: 25px;
+    margin-top: 1.15vw;
 }
 #menuToggle.open-menu .bottom-line {
 	opacity: 0;
@@ -286,7 +289,7 @@ select {
 }
 #menuToggle.open-menu .medium-line {
 	transform: rotate(45deg);
-	margin-top: -3.8px;
+	margin-top: -0.1vw;
 }
 
 #burger-menu .cont-mob {
