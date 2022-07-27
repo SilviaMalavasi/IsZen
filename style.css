@@ -240,12 +240,6 @@ select {
 #burger-menu {
 	display: block;
 }
-.site.open-menu {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-}
 .menu-title {
     position: absolute;
 }
@@ -304,11 +298,10 @@ select {
     width: 100vw;
     z-index: 100;
 	background: var(--nero);
-    height: 120vh;
+    height: 100vh;
 }
 #burger-menu .cont-mob.open-cont {
 	transform: none;
-    overflow-y: scroll;
 }
 #burger-menu .cont-mob a, #burger-menu .cont-mob p {
 	color: #fff;
@@ -356,7 +349,9 @@ select {
 .site .wp-block-image {
 	margin-bottom: 0;
 }
-
+.site .wp-block-video {
+	display: block;
+}
 
 
 
