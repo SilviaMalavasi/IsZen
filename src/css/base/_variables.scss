@@ -1,0 +1,68 @@
+:root {
+  --font-size-70pt: 3.7rem;
+  --line-height-70pt: 4.2rem;
+  --font-size-54pt: 2.8rem;
+  --line-height-62pt: 3.3rem;
+  --font-size-38pt: 2rem;
+  --line-height-50pt: 2.7rem;
+  --font-size-35pt: 1.87rem;
+  --line-height-42pt: 2.8rem;
+  --font-size-30pt: 1.6rem;
+  --line-height-36pt: 1.9rem;
+  --font-size-28pt: 1.5rem;
+  --line-height-32pt: 1.8rem;
+  --font-size-25pt: 1.32rem;
+  --font-size-24pt: 1.26rem;
+  --line-height-30pt: 1.6rem;
+  --font-size-20pt: 2.5rem;
+  --line-height-20pt: 3rem;
+  
+  --menu-width: 25px;
+  --menu-height: 1px;
+  --menu-gap: 5px;
+  --magic-number-menu: 4px;
+
+  --padding-piccolo: 2.7vw;
+  --padding-grande: 10.5vw;
+
+  --grigio-chiaro: #F4F4F4;
+  --grigio: #F0F0F0;
+  --rosso: #FF5858;
+  --giallo: #FFF736;
+
+  --column-gap: 3vw;
+
+  --easing: cubic-bezier(.5,0,.5,1);
+}
+
+// mediaQueryAllMobile
+
+@media screen and (max-width: 1024px) and (orientation: portrait) {
+  :root {
+    --font-size-30pt: max(14px, 1.87rem);
+    --line-height-36pt: max(18px, 2.6rem);
+    --font-size-28pt: max(14px, 1.5rem);
+    --line-height-36pt: max(18px, 1.8rem);
+    --font-size-25pt: max(14px, 1.4rem);
+    --line-height-36pt: max(18px, 1.6rem);
+
+    --padding-piccolo: 8vw;
+    --padding-grande: 8vw;
+  }
+}
+
+// mediaQueryPhonesAndSmallTabletsOnly 
+
+  @media screen and (max-width: 799px) {
+    :root {
+      --menu-width: 40px;
+      --menu-height: 2px;
+      --menu-gap: 8px;
+      --magic-number-menu: 16px;
+    }
+  }
+  
+// mediaQueryBigTabletsOnly
+
+@media screen and (min-width: 800px) and (max-width: 1024px) and (orientation: portrait) {
+}

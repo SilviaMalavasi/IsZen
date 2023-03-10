@@ -1,0 +1,24 @@
+@use '../base/mixins' as *;
+
+/* Menù*/
+
+#menu {
+    display: flex;
+    @include mediaQueryPhonesAndSmallTabletsOnly {
+        display: none;
+    }
+    .menu-home {
+        width: 5rem;
+    }
+    >div:not(.menu-home) {
+        flex-grow: 1;
+        ul {
+            display: flex;
+            justify-content: center;
+            li {
+                list-style: none;
+                margin: 0 1rem;
+            }
+        }
+    }
+}

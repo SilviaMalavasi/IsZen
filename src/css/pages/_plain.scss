@@ -1,0 +1,5 @@
+@use '../base/mixins' as *;
+
+.plain-page {
+  padding: 6rem var(--padding-grande);
+}

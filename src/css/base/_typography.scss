@@ -1,0 +1,178 @@
+@use '../base/mixins' as *;
+
+@font-face {
+  font-family: 'Lato';
+  src: url('assets/fonts/subset-Lato-Regular.woff2') format('woff2'), url('assets/fonts/subset-Lato-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('assets/fonts/subset-Lato-Bold.woff2') format('woff2'), url('assets/fonts/subset-Lato-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('assets/fonts/subset-Lato-Light.woff2') format('woff2'), url('assets/fonts/subset-Lato-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('assets/fonts/subset-Lato-Black.woff2') format('woff2'), url('assets/fonts/subset-Lato-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  font-size: calc((1vh + 4vw) * 0.217);
+  font-family: 'Lato', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'kern';
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  line-height: 1em;
+  font-weight: 300;
+  color: #000;
+  @include mediaQueryAllMobile {
+    font-size: 4vw;
+  }
+  @include mediaQueryPhonesAndSmallTabletsOnly {
+    font-size: 2.2vw;
+  }
+  @include mediaQueryBigTabletsOnly {
+    font-size: 1vw;
+  }
+}
+h1 {
+  @include font(70);
+  padding-bottom: 2rem;
+}
+h2 {
+  @include font(70);
+  padding-bottom: 2rem;
+  @include mediaQueryAllMobile {
+    @include font(20);
+  }
+}
+h3 {
+  @include font(35);
+  font-weight: 900;
+  padding-bottom: 2rem;
+}
+h4 {
+  @include font(30);
+  font-weight: 900;
+  padding-bottom: 1.5rem;
+}
+p {
+  @include font(30);
+  font-weight: 300;
+  padding-bottom: 0.8rem;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+li {
+  @include font(30);
+  padding-bottom: 1.2rem;
+}
+strong,
+bold {
+  font-weight: 700;
+}
+em {
+  font-style: italic;
+}
+.site input,
+.site textarea,
+.site input:focus,
+.site textarea:focus {
+  border: none;
+  background: var(--grigio-chiaro);
+  resize: none;
+  outline: none;
+  font-family: 'Lato', sans-serif;
+  @include font(25);
+  padding: 0.85rem 1.3rem;
+  width: 100%;
+}
+.site input {
+  &:focus::placeholder {
+    color: transparent;
+  }
+  &[type='submit'] {
+    width: auto;
+
+    &:focus {
+      width: auto;
+    }
+  }
+  &[type='checkbox'] {
+    padding: 0;
+    border-radius: 0.3rem;
+    border: none;
+    background: #fff;
+    margin: 0;
+    width: 1rem;
+    height: 1rem;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    margin-right: 0.2rem;
+    background: var(--grigio-chiaro);
+    @include mediaQueryPhonesAndSmallTabletsOnly {
+      width: 1.8rem;
+      height: 1.8rem;
+    }
+    &:checked:after {
+      content: '\2714';
+      font-size: 1rem;
+      line-height: 1rem;
+      margin-left: 0.05rem;
+      color: var(--rosso);
+      position: absolute;
+      margin-bottom: 0;
+      @include mediaQueryPhonesAndSmallTabletsOnly {
+        font-size: 1.5rem;
+        line-height: 1.8rem;
+        margin-left: 0.2rem;
+      }
+    }
+  }
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+      color: white;
+      transition: background-color 5000s ease-in-out 0s;
+  }
+  &:-webkit-autofill{
+      -webkit-text-fill-color: white !important;
+  }
+}
+.site select {
+  width: 100%;
+  font-size: 1rem;
+  border: 0;
+  padding: 0.85rem;
+  appearance: none;
+  background-color: var(--grigio-chiaro);
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1em;
+}

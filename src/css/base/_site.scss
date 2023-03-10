@@ -1,0 +1,61 @@
+@use '../base/mixins' as *;
+
+:root {
+  background-color: #ffffff;
+}
+#header {
+  position: relative;
+  width: 100%;
+}
+#smooth-content {
+  position: relative;
+}
+
+.site {
+  width: 100%;
+}
+.site .wp-block-columns {
+  gap: 0;
+
+  > div:not(:last-of-type) {
+    margin-right: var(--column-gap);
+  }
+  &:not(.is-not-stacked-on-mobile) {
+    @include mediaQueryPhonesAndSmallTabletsOnly {
+      > div:not(:last-of-type) {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+#content {
+  width: 100%;
+  overflow: hidden;
+}
+.wp-block-image,
+.wp-block-embed {
+  margin-bottom: 0;
+}
+.wp-block-video {
+  display: block;
+}
+.entry-meta {
+  display: none;
+}
+
+.video-iframe {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	padding-top: 56.25%;
+}
+.video-iframe iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+}

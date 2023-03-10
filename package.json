@@ -1,0 +1,41 @@
+{
+  "name": "iszen",
+  "version": "1.0.0",
+  "description": "Iszen Theme",
+  "keywords": [
+    "BigFive",
+    "Iszen"
+  ],
+  "author": "Silvia Malavasi",
+  "license": "ISC",
+  "scripts": {
+    "dev:sass-dev": "sass --watch --update --style=expanded src/css/:",
+    "dev:parcel-dev": "parcel watch src/js/site.jsx --no-source-maps --no-content-hash",
+    "dev": "concurrently --kill-others \"npm run dev:sass-dev\" \"npm run dev:parcel-dev\"",
+    "build:parcel-build": "parcel build src/js/site.jsx --no-source-maps --no-content-hash",
+    "build:sass-build": "sass --style=compressed src/css/:",
+    "build:autoprefixer": "postcss style.css --use autoprefixer -o style.css",
+    "build": "run-s build:*"
+  },
+  "browserslist": "last 2 versions, not dead, > 0.2%",
+  "targets": {
+    "default": {
+      "distDir": "./js"
+    }
+  },
+  "devDependencies": {
+    "@parcel/transformer-inline-string": "^2.8.3",
+    "autoprefixer": "^10.4.13",
+    "buffer": "^5.7.1",
+    "concurrently": "^7.6.0",
+    "npm-run-all": "^4.1.5",
+    "parcel": "^2.8.3",
+    "parcel-namer-hashless": "^1.0.4",
+    "postcss": "^8.4.19",
+    "postcss-cli": "^10.0.0",
+    "sass": "^1.56.1"
+  },
+  "dependencies": {
+    "gsap": "npm:@gsap/shockingly@^3.11.4"
+  }
+}

@@ -1,0 +1,60 @@
+@mixin mediaQueryAllMobile {
+  @media screen and (max-width: 1024px) and (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin mediaQueryPhonesAndSmallTabletsOnly {
+  @media screen and (max-width: 799px) {
+    @content;
+  }
+}
+
+@mixin mediaQueryBigTabletsOnly {
+  @media screen and (min-width: 800px) and (max-width: 1024px) and (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin desktopOnly {
+  @media screen and (min-width: 1024px) and (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin smalldesktopOnly {
+  @media screen and (min-width: 1024px) and (max-width: 1439px) and (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin font($font-pt) {
+  @if $font-pt == 70 {
+    font-size: var(--font-size-70pt);
+    line-height: var(--line-height-70pt);
+  }  @else if $font-pt == 54 {
+    font-size:var(--font-size-54pt);
+    line-height: var(--line-height-62pt);
+  }  @else if $font-pt == 38 {
+    font-size: var(--font-size-38pt);
+    line-height: var(--line-height-50pt);
+  }  @else if $font-pt == 35 {
+    font-size: var(--font-size-35pt);
+    line-height: var(--line-height-42pt);
+  }  @else if $font-pt == 30 {
+    font-size: var(--font-size-30pt);
+    line-height: var(--line-height-36pt);
+  }  @else if $font-pt == 28 {
+    font-size: var(--font-size-28pt);
+    line-height: var(--line-height-32pt);
+  }  @else if $font-pt == 25 {
+    font-size: var(--font-size-25pt);
+    line-height: var(--line-height-30pt);
+  }  @else if $font-pt == 24 {
+    font-size: var(--font-size-24pt);
+    line-height: var(--line-height-30pt);
+  }  @else if $font-pt == 20 {
+    font-size: var(--font-size-20pt);
+    line-height: var(--line-height-20pt);
+  }
+}
