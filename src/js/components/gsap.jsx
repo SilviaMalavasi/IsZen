@@ -6,7 +6,6 @@ export function gsapAnimations() {
   async function loadGsap() {
     const { gsap } = await import('gsap');
     const { ScrollTrigger } = await import('gsap/ScrollTrigger');
-    const { TextPlugin } = await import('gsap/TextPlugin');
 
     gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
