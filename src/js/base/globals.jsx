@@ -1,8 +1,8 @@
   // JS Media Queries
     
   export const mediaQueryAllMobile = window.matchMedia('(max-width: 1024px) and (orientation: portrait)').matches || ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) );
-  export  const mediaQueryPhonesAndSmallTabletsOnly = window.matchMedia('(max-width:799px)').matches;
-  export const mediaQueryBigTabletsOnly = window.matchMedia('(min-width: 800px) and (max-width: 1024px) and (orientation: portrait)').matches;
+  export  const mediaQueryPhonesAndSmallTabletsOnly = window.matchMedia('(max-width:767px)').matches;
+  export const mediaQueryBigTabletsOnly = window.matchMedia('(min-width: 768px) and (max-width: 1024px) and (orientation: portrait)').matches;
   
   // vw and vh
 
