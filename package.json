@@ -1,7 +1,7 @@
 {
   "name": "iszen",
   "version": "1.0.0",
-  "description": "Iszen Theme",
+  "description": "IsZen Theme",
   "keywords": [
     "BigFive",
     "Iszen"
@@ -20,7 +20,7 @@
   "browserslist": "last 2 versions, not dead, > 0.2%",
   "targets": {
     "default": {
-      "distDir": "./js"
+      "distDir": "./dist"
     }
   },
   "devDependencies": {

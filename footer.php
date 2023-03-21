@@ -8,12 +8,13 @@
         </div>
     </footer>
 
+
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
 
-</div>
-</div>
+</div><!-- #smooth-content -->
+</div><!-- #smooth-wrapper -->
 
 </body>
 </html>

@@ -1,29 +1,14 @@
-import { rem, vh } from '../base/globals.jsx';
-
 export function scrollToTop() {  
 (function($) {
 
-  async function loadscrollToTop() {
-    const { gsap } = await import('gsap');
-    const { ScrollTrigger } = await import('gsap/ScrollTrigger');
-
-    gsap.registerPlugin(ScrollTrigger);
-
-    ScrollTrigger.create({
-      trigger: "#scrollTopBtn",
-      pin: true,
-      start: "top " + (100*vh - 5*rem).toFixed(2) + "px",
-      endTrigger: "#footer",
-      end: "bottom bottom",
-      onEnter: () => $('#scrollTopBtn').css('opacity','1'),
-      onLeave: () => $('#scrollTopBtn').css('opacity','0'),
-      onEnterBack: () => $('#scrollTopBtn').css('opacity','1'),
-      onLeaveBack: () => $('#scrollTopBtn').css('opacity','0'),
-    });
-
-  }
-  loadscrollToTop();
-
+  window.onscroll = function() {scrollFunction()};
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      $("#scrollTopBtn").css('opacity','1')
+    } else {
+      $("#scrollTopBtn").css('opacity','0')
+    }
+  };
 
   $('body').on('click', '#scrollTopBtn', function() {
       $("html, body").animate({ scrollTop: 0 }, 800);

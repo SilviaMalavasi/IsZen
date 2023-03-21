@@ -1,29 +1,20 @@
 @use '../base/mixins' as *;
 
+.fade-in {
+	opacity: 0;
+}
 .fade-in-up {
   opacity: 0;
   transform: translateY(8rem);
-}
-.fade-in-right {
-	opacity: 0;
-	transform: translateX(7rem);
 }
 .fade-in-left {
 	opacity: 0;
 	transform: translateX(-7rem);
 }
-.fade-in-stagger-cont {
-	height: auto;
-	.fade-in-stagger {
-		opacity: 0;
-	}
+.fade-in-right {
+	opacity: 0;
+	transform: translateX(7rem);
 }
-.fade-in-right-stagger-cont {
-	height: auto;
-	.fade-in-right-stagger {
-		transform: translateX(6rem);
-		opacity: 0;
-	}
-}
+
 
   

@@ -24,8 +24,13 @@ function iszen_init() {
 add_action( 'wp_enqueue_scripts', 'iszen_scripts' );
 function iszen_scripts() {
     wp_enqueue_script( 'jquery' );
-    wp_enqueue_style( 'iszen-style', get_stylesheet_directory_uri() . '/style.css', array(), filemtime( get_stylesheet_directory() . '/style.css' ), false );
-    wp_enqueue_script( 'iszen-script', get_stylesheet_directory_uri() . '/js/site.js', array( 'jquery' ), filemtime(get_stylesheet_directory() . '/js/site.js'), true);
+     wp_enqueue_style( 'iszen-style', get_stylesheet_directory_uri() . '/style.css', array(), filemtime( get_stylesheet_directory() . '/style.css' ), false );
+    wp_enqueue_script( 'iszen-script', get_stylesheet_directory_uri() . '/dist/site.js', array( 'jquery' ), filemtime(get_stylesheet_directory() . '/dist/site.js'), true);
+
+    /* Production
+	wp_enqueue_style( 'iszen-style', get_stylesheet_directory_uri() . '/style.css', array(), '1.0.0', false );
+    wp_enqueue_script( 'iszen-script', get_stylesheet_directory_uri() . '/dist/site.js', array( 'jquery' ), '1.0.0', true );
+    */
 }
 
 
@@ -33,7 +38,7 @@ function iszen_scripts() {
 
 add_action('admin_head', 'iszen_dashboard_style'); 
 function iszen_dashboard_style() {
-    wp_enqueue_style( 'iszen_dashboard_style', get_template_directory_uri() . '/style-dashboard.css' );
+    wp_enqueue_style( 'iszen_dashboard_style', get_stylesheet_directory_uri() . '/style-dashboard.css' );
 }
 
 

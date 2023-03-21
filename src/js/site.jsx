@@ -1,16 +1,18 @@
 import { doScrollSmoother } from './base/scrollsmoother.jsx';
 import { removeAltOnHover } from './base/remove-alt-on-hover.jsx';
-import { burgerMenu } from './base/burger-menu.jsx';
+import { mobileMenu } from './base/mobile-menu.jsx';
 
 import { scrollToTarget, scrollToTop } from './components/scroll-to.jsx';
 import { gsapAnimations } from './components/gsap.jsx';
+import { mediaQueryAllMobile } from './base/globals.jsx';
 
 (function($) {
- 
-  doScrollSmoother();
+  if (!mediaQueryAllMobile) {
+    doScrollSmoother();
+  }
   scrollToTop();
   scrollToTarget();
-  burgerMenu();
+  mobileMenu();
    
   // Apri document ready
     

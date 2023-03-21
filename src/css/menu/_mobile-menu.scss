@@ -1,6 +1,6 @@
 @use '../base/mixins' as *;
 
-#burger-menu {
+#mobile-menu {
   display: none;
   @include mediaQueryPhonesAndSmallTabletsOnly {
     display: block;
@@ -9,6 +9,7 @@
     left: auto;
     right: 0;
     height: 0;
+    width: 100vw;
   }
   #menuToggle {
     position: absolute;
@@ -29,28 +30,16 @@
       background-color: black;
       margin-top: var(--menu-gap);
       transform-origin: center right;
-      transition: all 0.3s ease-in-out;
-  
+      transition: all 0.3s var(--easing);
       &.top-line {
         margin-top: 0;
       }
     }
-    &.open-menu {
-      .top-line {
-        transform: rotate(-45deg);
-      }
-      .medium-line {
-        opacity: 0;
-        transform: scale(0);
-      }
-      .bottom-line {
-        transform: rotate(45deg);
-        margin-top: var(--magic-number-menu);        
-      }
-    }
   }
-  .cont-mob {
-    position: relative;
+  .mobile-menu-cont {
+    position: fixed;
+    top: 0;
+    left: 0;
     padding: 4.5rem var(--padding-piccolo) 12rem var(--padding-piccolo);
     list-style-type: none;
     -webkit-font-smoothing: antialiased;
@@ -60,27 +49,52 @@
     width: 100vw;
     z-index: 2000;
     height: 100vh;
+    height: calc(120 * var(--vh));
     background-color: black;
-    ul {
-      height: 100%;
-      list-style: none;
-      padding-bottom: 5rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    li {
-      list-style: none;
-      padding-bottom: 2rem;
-      text-transform: uppercase;
-      color: white;
-      @include font(30);
-      &.burger-menu-home {
-        width: 8rem;
+    .mobile-menu-cont-cont {
+      height: 100vh;
+      height: calc(100 * var(--vh));
+      ul {
+        height: 100%;
+        list-style: none;
+        padding-bottom: 5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      li {
+        list-style: none;
+        padding-bottom: 2rem;
+        text-transform: uppercase;
+        color: white;
+        @include font(30);
+        &.mobile-menu-home {
+          width: 8rem;
+        }
       }
     }
-    &.open-cont {
+  }
+  &.open-menu {
+    #menuToggle {
+      position: fixed;
+      .top-line {
+        transform: rotate(-45deg);
+        background-color: white;
+      }
+      .medium-line {
+        opacity: 0;
+        transform: scale(0);
+      }
+      .bottom-line {
+        transform: rotate(45deg);
+        background-color: white;
+        margin-top: var(--magic-number-menu);        
+      }
+    }
+    .mobile-menu-cont {
       transform: none;
     }
   }
 }
+
+
