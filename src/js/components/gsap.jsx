@@ -15,6 +15,9 @@ export function gsapAnimations() {
 
       const fade_ins = gsap.utils.toArray('.fade-in');
       fade_ins.forEach( fade_in => {
+
+        let this_height = $(fade_in).outerHeight();
+        $(fade_in).css('height',this_height);
           
         const fade_in_anim = gsap.to(fade_in, {opacity: 1, duration: 1, paused: true });
           
@@ -42,25 +45,28 @@ export function gsapAnimations() {
       const fade_in_ups = gsap.utils.toArray('.fade-in-up');
       fade_in_ups.forEach( fade_in_up => {
         
-      const fade_in_up_anim = gsap.to(fade_in_up, { y: '0',  opacity: '1', duration: 1.5, paused: true });
-  
-      ScrollTrigger.create({
-        trigger: fade_in_up,
-        start: "top bottom+=" + 8 * rem + "px",
-        onEnter: () => fade_in_up_anim.play(),
-        onLeave: () => fade_in_up_anim.pause(0),
-      });
-      
-      ScrollTrigger.create({
-        trigger: fade_in_up,
-        start: `top bottom+=${8 * rem}px`,
-        onEnterBack: () => fade_in_up_anim.restart(),
-        onLeaveBack: () => fade_in_up_anim.pause(0),
-      });
-  
-      if ((fade_in_up.getBoundingClientRect().top) < window.innerHeight) {
-        fade_in_up_anim.play();
-      }
+        let this_height = $(fade_in_up).outerHeight();
+        $(fade_in_up).css('height',this_height);
+
+        const fade_in_up_anim = gsap.to(fade_in_up, { y: '0',  opacity: '1', duration: 1.5, paused: true });
+    
+        ScrollTrigger.create({
+          trigger: fade_in_up,
+          start: "top bottom+=" + 8 * rem + "px",
+          onEnter: () => fade_in_up_anim.play(),
+          onLeave: () => fade_in_up_anim.pause(0),
+        });
+        
+        ScrollTrigger.create({
+          trigger: fade_in_up,
+          start: `top bottom+=${8 * rem}px`,
+          onEnterBack: () => fade_in_up_anim.restart(),
+          onLeaveBack: () => fade_in_up_anim.pause(0),
+        });
+    
+        if ((fade_in_up.getBoundingClientRect().top) < window.innerHeight) {
+          fade_in_up_anim.play();
+        }
   
       });
     }
@@ -72,6 +78,9 @@ export function gsapAnimations() {
       const in_lefts = gsap.utils.toArray('.fade-in-left');
       in_lefts.forEach( in_left => {
         
+        let this_height = $(in_left).outerHeight();
+        $(in_left).css('height',this_height);
+
         const in_left_anim = gsap.to(in_left, { x: '0', opacity: 1, duration: 1, paused: true });
         
         ScrollTrigger.create({
@@ -96,21 +105,24 @@ export function gsapAnimations() {
     if($('.fade-in-right').length) {
       const in_rights = gsap.utils.toArray('.fade-in-right');
       in_rights.forEach( in_right => {
+
+        let this_height = $(in_right).outerHeight();
+        $(in_right).css('height',this_height);
+
+        const in_right_anim = gsap.to(in_right, { x: '0', opacity: 1, duration: 1, paused: true });
+          
+          ScrollTrigger.create({
+            trigger: in_right,
+            start: top_pos_animations,
+            onEnter: () => in_right_anim.play(),
+          });
         
-      const in_right_anim = gsap.to(in_right, { x: '0', opacity: 1, duration: 1, paused: true });
-        
-        ScrollTrigger.create({
-          trigger: in_right,
-          start: top_pos_animations,
-          onEnter: () => in_right_anim.play(),
-        });
-      
-        ScrollTrigger.create({
-          trigger: in_right,
-          start: "top bottom",
-          onEnterBack: () => in_right_anim.restart(),
-          onLeaveBack: () => in_right_anim.pause(0),
-        });
+          ScrollTrigger.create({
+            trigger: in_right,
+            start: "top bottom",
+            onEnterBack: () => in_right_anim.restart(),
+            onLeaveBack: () => in_right_anim.pause(0),
+          });
         
       });
     }

@@ -34,7 +34,7 @@
                 <div class="bottom-line"></div>
               </div>
               <div class="mobile-menu-cont">
-                <div calss="mobile-menu-cont-cont">
+                <div class="mobile-menu-cont-cont">
                     <div class="menu-home">
                         <a href="<?php echo site_url(); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/logo.png"></a>
                     </div>

@@ -9,7 +9,9 @@ export function doScrollSmoother() {
 
     gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
-    ScrollSmoother.create({});
+    ScrollSmoother.create({
+      smooth: 1,
+    });
 
 };
 
