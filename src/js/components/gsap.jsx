@@ -35,6 +35,10 @@ export function gsapAnimations() {
         });
         
       });
+
+      if (($(this)[0].getBoundingClientRect().top) < window.innerHeight) {
+        fade_in_anim.play();
+      }
     
     }
 
@@ -98,6 +102,10 @@ export function gsapAnimations() {
       
       });
 
+      if (($(this)[0].getBoundingClientRect().top) < window.innerHeight) {
+        in_left_anim.play();
+      }
+
     }
 
     // Fade in right
@@ -125,6 +133,11 @@ export function gsapAnimations() {
           });
         
       });
+
+      if (($(this)[0].getBoundingClientRect().top) < window.innerHeight) {
+        in_right_anim.play();
+      }
+
     }
   };
   
