@@ -2,6 +2,11 @@
     border: 2px solid black;
     padding: 1vw;
 }
-.header-cols figure {
-    background-color: lightgrey;
+.acf-field-message {
+    background-color: #1E1E1E;
+    padding: 16px 20px 8px 20px!important;
+}
+.acf-field-message {
+    font-size: 16px;
+    color: white;
 }
