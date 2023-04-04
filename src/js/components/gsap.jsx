@@ -100,15 +100,14 @@ export function gsapAnimations() {
           onLeaveBack: () => in_left_anim.pause(0),
         });
       
+        if (($(in_left)[0].getBoundingClientRect().top) < window.innerHeight) {
+          in_right_anim.play();
+        }
       });
-
-      if (($(this)[0].getBoundingClientRect().top) < window.innerHeight) {
-        in_left_anim.play();
-      }
-
     }
 
     // Fade in right
+
 
     if($('.fade-in-right').length) {
       const in_rights = gsap.utils.toArray('.fade-in-right');
@@ -119,25 +118,24 @@ export function gsapAnimations() {
 
         const in_right_anim = gsap.to(in_right, { x: '0', opacity: 1, duration: 1, paused: true });
           
-          ScrollTrigger.create({
-            trigger: in_right,
-            start: top_pos_animations,
-            onEnter: () => in_right_anim.play(),
-          });
-        
-          ScrollTrigger.create({
-            trigger: in_right,
-            start: "top bottom",
-            onEnterBack: () => in_right_anim.restart(),
-            onLeaveBack: () => in_right_anim.pause(0),
-          });
+        ScrollTrigger.create({
+          trigger: in_right,
+          start: top_pos_animations,
+          onEnter: () => in_right_anim.play(),
+        });
+      
+        ScrollTrigger.create({
+          trigger: in_right,
+          start: "top bottom",
+          onEnterBack: () => in_right_anim.restart(),
+          onLeaveBack: () => in_right_anim.pause(0),
+        });
+      
+        if (($(in_right)[0].getBoundingClientRect().top) < window.innerHeight) {
+          in_right_anim.play();
+        }
         
       });
-
-      if (($(this)[0].getBoundingClientRect().top) < window.innerHeight) {
-        in_right_anim.play();
-      }
-
     }
   };
   
