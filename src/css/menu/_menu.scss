@@ -10,16 +10,14 @@
     .menu-home {
         width: 5rem;
     }
-    li {
-        position: relative;
-        cursor: pointer;
-    }
     >div:not(.menu-home) {
         flex-grow: 1;
         ul {
             display: flex;
             justify-content: center;
             li {
+                position: relative;
+                cursor: pointer;
                 list-style: none;
                 margin: 0 1rem;
             }
