@@ -101,7 +101,7 @@ export function gsapAnimations() {
         });
       
         if (($(in_left)[0].getBoundingClientRect().top) < window.innerHeight) {
-          in_right_anim.play();
+          in_left_anim.play();
         }
       });
     }
