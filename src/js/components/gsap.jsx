@@ -137,6 +137,53 @@ export function gsapAnimations() {
         
       });
     }
+
+    // Fade in right stagger
+      
+    if($('.fade-in-right-stagger-cont').length) {
+      
+      $('.fade-in-right-stagger-cont').each(function() {
+      
+        const fade_in_right_stagger = $(this);
+        const fade_in_right_this_stagger = $(this).find(".fade-in-right-stagger");
+      
+        let this_height = $(fade_in_right_this_stagger).outerHeight();
+        $(fade_in_right_this_stagger).css('height',this_height);
+
+        const fade_in_right_stagger_anim = gsap.to(fade_in_right_this_stagger, {
+        duration: 1,
+        opacity: 1,
+        x: 0,
+        ease: "power1.inOut",
+        stagger: {
+        from: 0,
+        amount: 0.5
+        }
+        });
+            
+        fade_in_right_stagger_anim.pause(0);
+            
+        ScrollTrigger.create({
+            trigger: fade_in_right_stagger,
+              start: 'top 70%',
+              onEnter: () => fade_in_right_stagger_anim.play(),
+              onLeave: () => fade_in_right_stagger_anim.pause(0),
+        });
+        
+        ScrollTrigger.create({
+              trigger: fade_in_right_stagger,
+              start: "top bottom",
+              onEnterBack: () => fade_in_right_stagger_anim.restart(),
+              onLeaveBack: () => fade_in_right_stagger_anim.pause(0),
+        });
+      
+        if (($(this)[0].getBoundingClientRect().top) < window.innerHeight) {
+        fade_in_right_stagger_anim.play();
+        }
+        
+      })
+    };
+
   };
   
   loadGsap();
