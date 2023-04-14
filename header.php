@@ -13,8 +13,7 @@
 <body <?php body_class(); ?>>
 
 <div id="scrollTopBtn">
-    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 43.624 43.624">
-    <path d="M21.812,1.5A20.312,20.312,0,1,1,1.5,21.812h0A20.312,20.312,0,0,1,21.812,1.5Z" style="fill:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:3px;"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 83 83"><circle id="af804377-5777-47b5-ac67-f3bb632ed23f" data-name="Ellipse 7" cx="41.5" cy="41.5" r="41.5"/><path id="a1a5d762-08ad-4920-9398-1aa7fdec4bda" data-name="Path 221" d="M59.562,49.28027l-17.935-17.934-17.934,17.934" style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:10px"/></svg>
 </div>
 
 <div id="smooth-wrapper">
