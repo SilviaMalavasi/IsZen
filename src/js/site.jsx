@@ -18,7 +18,7 @@ import { mediaQueryAllMobile } from './base/globals.jsx';
     
   $(function(){
 
-    if($('.fade-in').length || $('.fade-in-up').length || $('.fade-in-left').length || $('.fade-in-right').length) {
+    if($('.fade-in').length || $('.fade-in-up').length || $('.fade-in-left').length || $('.fade-in-right').length || $('.fade-in-right-stagger-cont').length) {
       gsapAnimations();
     };
 
