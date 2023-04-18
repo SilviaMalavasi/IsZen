@@ -2,7 +2,6 @@ export function scrollToTop() {
 (function($) {
 
   window.addEventListener('scroll', scrollFunction);
-
   function scrollFunction() {
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
       $("#scrollTopBtn").css('opacity','1')
