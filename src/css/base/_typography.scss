@@ -1,32 +1,36 @@
-@use '../base/mixins' as *;
+@use "../base/mixins" as *;
 
 @font-face {
-  font-family: 'Lato';
-  src: url('assets/fonts/subset-Lato-Regular.woff2') format('woff2'), url('assets/fonts/subset-Lato-Regular.woff') format('woff');
+  font-family: "Lato";
+  src: url("assets/fonts/subset-Lato-Regular.woff2") format("woff2"),
+    url("assets/fonts/subset-Lato-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Lato';
-  src: url('assets/fonts/subset-Lato-Bold.woff2') format('woff2'), url('assets/fonts/subset-Lato-Bold.woff') format('woff');
+  font-family: "Lato";
+  src: url("assets/fonts/subset-Lato-Bold.woff2") format("woff2"),
+    url("assets/fonts/subset-Lato-Bold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Lato';
-  src: url('assets/fonts/subset-Lato-Light.woff2') format('woff2'), url('assets/fonts/subset-Lato-Light.woff') format('woff');
+  font-family: "Lato";
+  src: url("assets/fonts/subset-Lato-Light.woff2") format("woff2"),
+    url("assets/fonts/subset-Lato-Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Lato';
-  src: url('assets/fonts/subset-Lato-Black.woff2') format('woff2'), url('assets/fonts/subset-Lato-Black.woff') format('woff');
+  font-family: "Lato";
+  src: url("assets/fonts/subset-Lato-Black.woff2") format("woff2"),
+    url("assets/fonts/subset-Lato-Black.woff") format("woff");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
@@ -34,10 +38,10 @@
 
 :root {
   font-size: calc((1vh + 4vw) * 0.217);
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-feature-settings: 'kern';
+  font-feature-settings: "kern";
   font-kerning: normal;
   text-rendering: optimizeLegibility;
   -webkit-text-size-adjust: 100%;
@@ -102,7 +106,7 @@ em {
   background: var(--grigio-chiaro);
   resize: none;
   outline: none;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   @include font(25);
   padding: 0.85rem 1.3rem;
   width: 100%;
@@ -111,14 +115,14 @@ em {
   &:focus::placeholder {
     color: transparent;
   }
-  &[type='submit'] {
+  &[type="submit"] {
     width: auto;
 
     &:focus {
       width: auto;
     }
   }
-  &[type='checkbox'] {
+  &[type="checkbox"] {
     padding: 0;
     border-radius: 0.3rem;
     border: none;
@@ -136,7 +140,7 @@ em {
       height: 1.8rem;
     }
     &:checked:after {
-      content: '\2714';
+      content: "\2714";
       font-size: 1rem;
       line-height: 1rem;
       margin-left: 0.05rem;
@@ -154,11 +158,11 @@ em {
   &:-webkit-autofill:hover,
   &:-webkit-autofill:focus,
   &:-webkit-autofill:active {
-      color: white;
-      transition: background-color 5000s ease-in-out 0s;
+    color: white;
+    transition: background-color 5000s ease-in-out 0s;
   }
-  &:-webkit-autofill{
-      -webkit-text-fill-color: white !important;
+  &:-webkit-autofill {
+    -webkit-text-fill-color: white !important;
   }
 }
 .site select {

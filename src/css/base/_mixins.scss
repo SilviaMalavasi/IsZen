@@ -32,26 +32,26 @@
   @if $font-pt == 500 {
     font-size: var(--font-size-500pt);
     line-height: 1em;
-  }  @else if $font-pt == 84 {
-    font-size:var(--font-size-84pt);
+  } @else if $font-pt == 84 {
+    font-size: var(--font-size-84pt);
     line-height: 1em;
   } @else if $font-pt == 64 {
-    font-size:var(--font-size-64pt);
+    font-size: var(--font-size-64pt);
     line-height: 1.5em;
   } @else if $font-pt == 32 {
-    font-size:var(--font-size-32pt);
+    font-size: var(--font-size-32pt);
     line-height: 1.5em;
   } @else if $font-pt == 24 {
-    font-size:var(--font-size-24pt);
+    font-size: var(--font-size-24pt);
     line-height: 1.3em;
   } @else if $font-pt == 18 {
-    font-size:var(--font-size-18pt);
+    font-size: var(--font-size-18pt);
     line-height: 1.2em;
   } @else if $font-pt == 16 {
-    font-size:var(--font-size-16pt);
+    font-size: var(--font-size-16pt);
     line-height: 1.87em;
   } @else if $font-pt == 14 {
-    font-size:var(--font-size-14pt);
+    font-size: var(--font-size-14pt);
     line-height: 1.3em;
   }
 }

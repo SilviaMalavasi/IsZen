@@ -1,56 +1,56 @@
-@use '../base/mixins' as *;
+@use "../base/mixins" as *;
 
 /* Menù*/
 
 #menu {
-    display: flex;
-    @include mediaQueryPhonesAndSmallTabletsOnly {
-        display: none;
+  display: flex;
+  @include mediaQueryPhonesAndSmallTabletsOnly {
+    display: none;
+  }
+  .menu-home {
+    width: 5rem;
+  }
+  > div:not(.menu-home) {
+    flex-grow: 1;
+    ul {
+      display: flex;
+      justify-content: center;
+      li {
+        position: relative;
+        cursor: pointer;
+        list-style: none;
+        margin: 0 1rem;
+      }
     }
-    .menu-home {
-        width: 5rem;
+  }
+  .sub-menu {
+    position: absolute;
+    flex-direction: column;
+    width: 100%;
+    transform: scaleY(0);
+    -webkit-transition: all 0s ease-in;
+    -o-transition: all 0s ease-in;
+    transition: all 0s ease-in;
+    transform-origin: 0 0;
+    padding-top: 2.9rem;
+    display: block;
+    li {
+      @include font(25);
+      margin-right: 0;
+      display: block;
+      width: 15rem;
     }
-    >div:not(.menu-home) {
-        flex-grow: 1;
-        ul {
-            display: flex;
-            justify-content: center;
-            li {
-                position: relative;
-                cursor: pointer;
-                list-style: none;
-                margin: 0 1rem;
-            }
-        }
+    a {
+      padding-left: 0;
     }
-    .sub-menu {
-        position: absolute;
-        flex-direction: column;
-        width: 100%;
-        transform: scaleY(0);
-        -webkit-transition: all 0s ease-in;
-        -o-transition: all 0s ease-in;
-        transition: all 0s ease-in;
-        transform-origin: 0 0;
-        padding-top: 2.9rem;
-        display: block;
-        li {
-            @include font(25);
-            margin-right: 0;
-            display: block;
-            width: 15rem;
-        }
-        a {
-            padding-left: 0;
-        }
-        &:first-of-type a {
-            padding-top: 1rem;
-        }
-        &:last-of-type a {
-            padding-bottom: 1rem;
-        }
+    &:first-of-type a {
+      padding-top: 1rem;
     }
-    li:hover > .sub-menu {
-        transform: scaleY(1);
+    &:last-of-type a {
+      padding-bottom: 1rem;
     }
+  }
+  li:hover > .sub-menu {
+    transform: scaleY(1);
+  }
 }

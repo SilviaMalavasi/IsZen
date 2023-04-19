@@ -6,7 +6,7 @@
   --font-size-18pt: 0.9rem;
   --font-size-16pt: 0.67rem;
   --font-size-12pt: max(14px, 0.5rem);
-  
+
   --menu-width: 25px;
   --menu-height: 1px;
   --menu-gap: 5px;
@@ -15,10 +15,10 @@
   --padding-piccolo: 2.7vw;
   --padding-grande: 10.5vw;
 
-  --grigio-chiaro: #F4F4F4;
-  --grigio: #F0F0F0;
-  --rosso: #FF5858;
-  --giallo: #FFF736;
+  --grigio-chiaro: #f4f4f4;
+  --grigio: #f0f0f0;
+  --rosso: #ff5858;
+  --giallo: #fff736;
 
   --column-gap: 3vw;
 
@@ -41,17 +41,17 @@
   }
 }
 
-// mediaQueryPhonesAndSmallTabletsOnly 
+// mediaQueryPhonesAndSmallTabletsOnly
 
-  @media screen and (max-width: 767px) {
-    :root {
-      --menu-width: 40px;
-      --menu-height: 2px;
-      --menu-gap: 8px;
-      --magic-number-menu: 16px;
-    }
+@media screen and (max-width: 767px) {
+  :root {
+    --menu-width: 40px;
+    --menu-height: 2px;
+    --menu-gap: 8px;
+    --magic-number-menu: 16px;
   }
-  
+}
+
 // mediaQueryBigTabletsOnly
 
 @media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
