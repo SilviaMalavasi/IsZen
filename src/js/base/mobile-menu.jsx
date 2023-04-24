@@ -23,15 +23,20 @@ export function mobileMenu() {
 
     $("#mobile-menu li.menu-item-has-children").on(
       "touchstart click",
-      function (e) {
+      function (event) {
+        var $target = $(event.target);
         var link = $(this);
-        if (link.hasClass("hover")) {
-          link.removeClass("hover");
-        } else {
-          link.addClass("hover");
-          $("ul > li").not(this).removeClass("hover");
-          e.preventDefault();
-          return false;
+        if (
+          !$target.closest("#mobile-menu li.menu-item-has-children li").length
+        ) {
+          if (link.hasClass("hover")) {
+            link.removeClass("hover");
+          } else {
+            link.addClass("hover");
+            $("ul > li").not(this).removeClass("hover");
+            event.preventDefault();
+            return false;
+          }
         }
       }
     );
