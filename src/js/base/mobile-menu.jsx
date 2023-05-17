@@ -1,44 +1,41 @@
+import $ from "jquery";
+
 export function mobileMenu() {
-  (function ($) {
-    $("#menuToggle").on("tap click", function () {
-      $("#mobile-menu").toggleClass("open-menu");
-    });
+  $("#menuToggle").on("tap click", function () {
+    $("#mobile-menu").toggleClass("open-menu");
+  });
 
-    $(document).on("tap click", function (event) {
-      if ($("#mobile-menu").hasClass("open-menu")) {
-        $(document).on("tap click", function (event) {
-          var $target = $(event.target);
-          if (
-            !$target.closest("#mobile-menu .mobile-menu-cont").length &&
-            !$target.closest(".menu-item.menu-home").length
-          ) {
-            $("#mobile-menu").toggleClass("open-menu");
-          }
-          if ($target.closest("#menuToggle").length) {
-            $("#mobile-menu").toggleClass("open-menu");
-          }
-        });
-      }
-    });
-
-    $("#mobile-menu li.menu-item-has-children").on(
-      "touchstart click",
-      function (event) {
+  $(document).on("tap click", function (event) {
+    if ($("#mobile-menu").hasClass("open-menu")) {
+      $(document).on("tap click", function (event) {
         var $target = $(event.target);
-        var link = $(this);
         if (
-          !$target.closest("#mobile-menu li.menu-item-has-children li").length
+          !$target.closest("#mobile-menu .mobile-menu-cont").length &&
+          !$target.closest(".menu-item.menu-home").length
         ) {
-          if (link.hasClass("hover")) {
-            link.removeClass("hover");
-          } else {
-            link.addClass("hover");
-            $("ul > li").not(this).removeClass("hover");
-            event.preventDefault();
-            return false;
-          }
+          $("#mobile-menu").toggleClass("open-menu");
         }
+        if ($target.closest("#menuToggle").length) {
+          $("#mobile-menu").toggleClass("open-menu");
+        }
+      });
+    }
+  });
+
+  $("#mobile-menu li.menu-item-has-children").on("touchstart click", function (
+    event
+  ) {
+    var $target = $(event.target);
+    var link = $(this);
+    if (!$target.closest("#mobile-menu li.menu-item-has-children li").length) {
+      if (link.hasClass("hover")) {
+        link.removeClass("hover");
+      } else {
+        link.addClass("hover");
+        $("ul > li").not(this).removeClass("hover");
+        event.preventDefault();
+        return false;
       }
-    );
-  })(jQuery);
+    }
+  });
 }

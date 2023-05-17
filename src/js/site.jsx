@@ -6,27 +6,27 @@ import { scrollToTarget, scrollToTop } from "./components/scroll-to.jsx";
 import { gsapAnimations } from "./components/gsap.jsx";
 import { mediaQueryAllMobile } from "./base/globals.jsx";
 
-(function ($) {
-  if (!mediaQueryAllMobile) {
-    doScrollSmoother();
+import $ from "jquery";
+
+if (!mediaQueryAllMobile) {
+  doScrollSmoother();
+}
+scrollToTop();
+scrollToTarget();
+mobileMenu();
+
+// Apri document ready
+
+$(function () {
+  if (
+    $(".fade-in").length ||
+    $(".fade-in-up").length ||
+    $(".fade-in-left").length ||
+    $(".fade-in-right").length ||
+    $(".fade-in-right-stagger-cont").length
+  ) {
+    gsapAnimations();
   }
-  scrollToTop();
-  scrollToTarget();
-  mobileMenu();
 
-  // Apri document ready
-
-  $(function () {
-    if (
-      $(".fade-in").length ||
-      $(".fade-in-up").length ||
-      $(".fade-in-left").length ||
-      $(".fade-in-right").length ||
-      $(".fade-in-right-stagger-cont").length
-    ) {
-      gsapAnimations();
-    }
-
-    removeAltOnHover();
-  }); // Chiudi document ready
-})(jQuery);
+  removeAltOnHover();
+}); // Chiudi document ready

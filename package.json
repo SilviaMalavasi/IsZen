@@ -36,6 +36,7 @@
     "sass": "^1.56.1"
   },
   "dependencies": {
-    "gsap": "npm:@gsap/shockingly@^3.11.4"
+    "gsap": "npm:@gsap/shockingly@^3.11.4",
+    "jquery": "^3.7.0"
   }
 }
