@@ -7,10 +7,10 @@ export const mediaQueryAllMobile =
     navigator.userAgent
   );
 export const mediaQueryPhonesAndSmallTabletsOnly = window.matchMedia(
-  "(max-width:767px)"
+  "(max-width:781px)"
 ).matches;
 export const mediaQueryBigTabletsOnly = window.matchMedia(
-  "(min-width: 768px) and (max-width: 1024px) and (orientation: portrait)"
+  "(min-width: 782px) and (max-width: 1024px) and (orientation: portrait)"
 ).matches;
 
 // vw and vh

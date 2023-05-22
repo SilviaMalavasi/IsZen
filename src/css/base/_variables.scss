@@ -43,7 +43,7 @@
 
 // mediaQueryPhonesAndSmallTabletsOnly
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 781px) {
   :root {
     --menu-width: 40px;
     --menu-height: 2px;
@@ -54,5 +54,5 @@
 
 // mediaQueryBigTabletsOnly
 
-@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+@media screen and (min-width: 782px) and (max-width: 1024px) and (orientation: portrait) {
 }
