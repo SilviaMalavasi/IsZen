@@ -58,14 +58,14 @@ export function gsapAnimations() {
 
         ScrollTrigger.create({
           trigger: fade_in_up,
-          start: "top bottom+=" + 8 * rem + "px",
+          start: "top bottom+=" + 14 * rem + "px",
           onEnter: () => fade_in_up_anim.play(),
           onLeave: () => fade_in_up_anim.pause(0),
         });
 
         ScrollTrigger.create({
           trigger: fade_in_up,
-          start: `top bottom+=${8 * rem}px`,
+          start: `top bottom+=${14 * rem}px`,
           onEnterBack: () => fade_in_up_anim.restart(),
           onLeaveBack: () => fade_in_up_anim.pause(0),
         });
