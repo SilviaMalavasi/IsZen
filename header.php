@@ -42,7 +42,7 @@
             </div>
         </nav>
 
-        <nav id="menu">
+        <nav role="navigation" id="menu">
             <div class="menu-home">
                 <a href="<?php echo site_url(); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/logo.png"></a>
             </div>
