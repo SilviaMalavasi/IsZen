@@ -1,5 +1,5 @@
-import $ from "jquery";
 import { rem, top_pos_animations } from "../base/globals.jsx";
+import $ from "jquery";
 
 export function gsapAnimations() {
   async function loadGsap() {
@@ -34,11 +34,11 @@ export function gsapAnimations() {
           onEnterBack: () => fade_in_anim.restart(),
           onLeaveBack: () => fade_in_anim.pause(0),
         });
-      });
 
-      if ($(this)[0].getBoundingClientRect().top < window.innerHeight) {
-        fade_in_anim.play();
-      }
+        if (fade_in.getBoundingClientRect().top < window.innerHeight) {
+          fade_in_anim.play();
+        }
+      });
     }
 
     // Fade in up
