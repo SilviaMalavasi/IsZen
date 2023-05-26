@@ -41,28 +41,6 @@ function iszen_dashboard_style() {
     wp_enqueue_style( 'iszen_dashboard_style', get_stylesheet_directory_uri() . '/style-dashboard.css' );
 }
 
-
-/* Remove wp svg filters */
-
-add_action('wp_footer',function() {
-    global $wp_filter;
-
-    if(empty($wp_filter['wp_footer'][10])) return;
-
-    foreach($wp_filter['wp_footer'][10] as $hook) {
-            if(!is_object($hook['function']) || get_class($hook['function']) !== 'Closure') continue;
-
-            $static=(new ReflectionFunction($hook['function']))->getStaticVariables();
-
-            if(empty($static['svg'])) continue;
-
-            if(!str_starts_with($static['svg'],'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" ')) continue;
-
-            remove_action('wp_footer',$hook['function'],10);
-    }
-},9);
-
-
 /* Menù */
 
 add_action( 'init', 'iszen_register_menus' );
@@ -75,7 +53,7 @@ function iszen_register_menus() {
 }
 
 
-/* Add serach to menu */
+/* Add search to menu */
 
 add_filter('wp_nav_menu_items', 'iszen_add_search_form', 10, 2);
 function iszen_add_search_form($items, $args) {
