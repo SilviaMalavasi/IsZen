@@ -55,7 +55,7 @@
     width: 100vw;
     z-index: 2000;
     height: 100vh;
-    height: calc(120 * var(--vh));
+    height: fill-available;
     background-color: gainsboro;
     .mobile-menu-cont-cont {
       height: 100vh;
