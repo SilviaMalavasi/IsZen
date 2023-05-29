@@ -58,8 +58,7 @@
     height: fill-available;
     background-color: gainsboro;
     .mobile-menu-cont-cont {
-      height: 100vh;
-      height: calc(100 * var(--vh));
+      height: 100%;
       a {
         color: white;
         @include font(42);
