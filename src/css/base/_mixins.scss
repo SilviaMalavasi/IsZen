@@ -28,6 +28,12 @@
   }
 }
 
+@mixin hover {
+  @media (hover: hover) {
+    @content;
+  }
+}
+
 @mixin font($font-pt) {
   @if $font-pt == 500 {
     font-size: var(--font-size-500pt);

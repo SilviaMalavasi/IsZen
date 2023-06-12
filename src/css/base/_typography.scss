@@ -44,11 +44,10 @@
   font-feature-settings: "kern";
   font-kerning: normal;
   text-rendering: optimizeLegibility;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
   text-size-adjust: 100%;
   line-height: 1em;
   font-weight: 300;
+
   color: #000;
   @include mediaQueryAllMobile {
     font-size: 4vw;

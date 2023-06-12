@@ -19,6 +19,11 @@
   }
   #menuToggle {
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: var(--menu-width);
+    height: calc(var(--menu-width) * 0.65);
     top: 0;
     left: auto;
     right: 0;
@@ -26,19 +31,20 @@
     cursor: pointer;
     margin-top: 1.5rem;
     margin-right: var(--padding-piccolo);
-    width: var(--menu-width);
-    height: calc(var(--menu-height) * 3 + var(--menu-gap) * 2);
     div {
       position: relative;
       width: var(--menu-width);
       height: var(--menu-height);
       border-radius: var(--menu-height);
-      background-color: white;
-      margin-top: var(--menu-gap);
+      background-color: black;
       transform-origin: center right;
       transition: all 0.3s var(--easing);
       &.top-line {
         margin-top: 0;
+        transform-origin: 0% 0%;
+      }
+      &.bottom-line {
+        transform-origin: 0% 100%;
       }
     }
   }
@@ -136,7 +142,7 @@
     #menuToggle {
       position: fixed;
       .top-line {
-        transform: rotate(-45deg);
+        transform: rotate(45deg);
         background-color: white;
       }
       .medium-line {
@@ -144,9 +150,8 @@
         transform: scale(0);
       }
       .bottom-line {
-        transform: rotate(45deg);
+        transform: translateY(calc(var(--menu-width) * 0.12)) rotate(-45deg);
         background-color: white;
-        margin-top: var(--magic-number-menu);
       }
     }
     .mobile-menu-cont {

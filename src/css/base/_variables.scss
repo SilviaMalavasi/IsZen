@@ -9,8 +9,6 @@
 
   --menu-width: 25px;
   --menu-height: 1px;
-  --menu-gap: 5px;
-  --magic-number-menu: 4px;
 
   --padding-piccolo: 2.7vw;
   --padding-grande: 10.5vw;
@@ -46,9 +44,7 @@
 @media screen and (max-width: 781px) {
   :root {
     --menu-width: 40px;
-    --menu-height: 2px;
-    --menu-gap: 8px;
-    --magic-number-menu: 16px;
+    --menu-height: 3px;
   }
 }
 
