@@ -5,6 +5,7 @@ export function gsapAnimations() {
   async function loadGsap() {
     const { gsap } = await import("gsap");
     const { ScrollTrigger } = await import("gsap/ScrollTrigger");
+    const { TextPlugin } = await import("gsap/TextPlugin");
 
     gsap.registerPlugin(ScrollTrigger);
 
@@ -144,6 +145,48 @@ export function gsapAnimations() {
       });
     }
 
+    // Fade in stagger
+
+    if ($(".fade-in-stagger-cont").length) {
+      $(".fade-in-stagger-cont").each(function () {
+        const fade_in_stagger = $(this);
+        const fade_in_this_stagger = $(this).find(".fade-in-stagger");
+
+        let this_height = $(fade_in_this_stagger).outerHeight();
+        $(fade_in_this_stagger).css("height", this_height);
+
+        const fade_in_stagger_anim = gsap.to(fade_in_this_stagger, {
+          duration: 1,
+          opacity: 1,
+          ease: "power1.inOut",
+          stagger: {
+            from: 0,
+            amount: 0.5,
+          },
+        });
+
+        fade_in_stagger_anim.pause(0);
+
+        ScrollTrigger.create({
+          trigger: fade_in_stagger,
+          start: "top 70%",
+          onEnter: () => fade_in_stagger_anim.play(),
+          onLeave: () => fade_in_stagger_anim.pause(0),
+        });
+
+        ScrollTrigger.create({
+          trigger: fade_in_stagger,
+          start: "top bottom",
+          onEnterBack: () => fade_in_stagger_anim.restart(),
+          onLeaveBack: () => fade_in_stagger_anim.pause(0),
+        });
+
+        if ($(this)[0].getBoundingClientRect().top < window.innerHeight) {
+          fade_in_stagger_anim.play();
+        }
+      });
+    }
+
     // Fade in right stagger
 
     if ($(".fade-in-right-stagger-cont").length) {
@@ -186,6 +229,123 @@ export function gsapAnimations() {
         if ($(this)[0].getBoundingClientRect().top < window.innerHeight) {
           fade_in_right_stagger_anim.play();
         }
+      });
+    }
+
+    // Fade in left stagger
+
+    if ($(".fade-in-left-stagger-cont").length) {
+      $(".fade-in-left-stagger-cont").each(function () {
+        const fade_in_left_stagger = $(this);
+        const fade_in_left_this_stagger = $(this).find(".fade-in-left-stagger");
+
+        let this_height = $(fade_in_left_this_stagger).outerHeight();
+        $(fade_in_left_this_stagger).css("height", this_height);
+
+        const fade_in_left_stagger_anim = gsap.to(fade_in_left_this_stagger, {
+          duration: 1,
+          opacity: 1,
+          x: 0,
+          ease: "power1.inOut",
+          stagger: {
+            from: 0,
+            amount: 0.5,
+          },
+        });
+
+        fade_in_left_stagger_anim.pause(0);
+
+        ScrollTrigger.create({
+          trigger: fade_in_left_stagger,
+          start: "top 70%",
+          onEnter: () => fade_in_left_stagger_anim.play(),
+          onLeave: () => fade_in_left_stagger_anim.pause(0),
+        });
+
+        ScrollTrigger.create({
+          trigger: fade_in_left_stagger,
+          start: "top bottom",
+          onEnterBack: () => fade_in_left_stagger_anim.restart(),
+          onLeaveBack: () => fade_in_left_stagger_anim.pause(0),
+        });
+
+        if ($(this)[0].getBoundingClientRect().top < window.innerHeight) {
+          fade_in_left_stagger_anim.play();
+        }
+      });
+    }
+
+    // Fade in up stagger
+
+    if ($(".fade-in-up-stagger-cont").length) {
+      $(".fade-in-up-stagger-cont").each(function () {
+        const fade_in_up_stagger = $(this);
+        const fade_in_up_this_stagger = $(this).find(".fade-in-up-stagger");
+
+        let this_height = $(fade_in_up_this_stagger).outerHeight();
+        $(fade_in_up_this_stagger).css("height", this_height);
+
+        const fade_in_up_stagger_anim = gsap.to(fade_in_up_this_stagger, {
+          duration: 1,
+          opacity: 1,
+          y: 0,
+          ease: "power1.inOut",
+          stagger: {
+            from: 0,
+            amount: 0.5,
+          },
+        });
+
+        fade_in_up_stagger_anim.pause(0);
+
+        ScrollTrigger.create({
+          trigger: fade_in_up_stagger,
+          start: "top 90%",
+          onEnter: () => fade_in_up_stagger_anim.play(),
+          onLeave: () => fade_in_up_stagger_anim.pause(0),
+        });
+
+        ScrollTrigger.create({
+          trigger: fade_in_up_stagger,
+          start: "top bottom",
+          onEnterBack: () => fade_in_up_stagger_anim.restart(),
+          onLeaveBack: () => fade_in_up_stagger_anim.pause(0),
+        });
+
+        if ($(this)[0].getBoundingClientRect().top < window.innerHeight) {
+          fade_in_up_stagger_anim.play();
+        }
+      });
+    }
+
+    // GSAP Numeri
+
+    gsap.registerPlugin(TextPlugin);
+
+    if ($(".blocco-numeri").length) {
+      const numeri_anim = gsap.from(".blocco-numeri .numero", {
+        textContent: 0,
+        duration: 1,
+        snap: { textContent: 1 },
+        stagger: {
+          from: 0,
+          amount: 0.5,
+        },
+      });
+
+      numeri_anim.pause(0);
+
+      ScrollTrigger.create({
+        trigger: ".blocco-numeri",
+        start: "top 70%",
+        onEnter: () => numeri_anim.play(),
+      });
+
+      ScrollTrigger.create({
+        trigger: ".blocco-numeri",
+        start: "top bottom",
+        onEnterBack: () => numeri_anim.restart(),
+        onLeaveBack: () => numeri_anim.pause(0),
       });
     }
   }

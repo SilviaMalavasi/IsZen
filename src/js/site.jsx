@@ -23,7 +23,10 @@ $(function () {
     $(".fade-in-up").length ||
     $(".fade-in-left").length ||
     $(".fade-in-right").length ||
-    $(".fade-in-right-stagger-cont").length
+    $(".fade-in-right-stagger-cont").length ||
+    $(".fade-in-up-stagger-cont").length ||
+    $(".fade-in-left-stagger-cont").length ||
+    $(".blocco-numeri").length
   ) {
     gsapAnimations();
   }

@@ -100,17 +100,23 @@ em {
 .site input,
 .site textarea,
 .site input:focus,
-.site textarea:focus {
+.site textarea:focus,
+.site select,
+.site select:focus {
   border: none;
   background: gainsboro;
   resize: none;
   outline: none;
+  appearance: none;
   font-family: "Lato", sans-serif;
   @include font(25);
   padding: 0.85rem 1.3rem;
   width: 100%;
 }
 .site input {
+  &::placeholder {
+    @include font(25);
+  }
   &:focus::placeholder {
     color: transparent;
   }
@@ -165,12 +171,6 @@ em {
   }
 }
 .site select {
-  width: 100%;
-  font-size: 1rem;
-  border: 0;
-  padding: 0.85rem;
-  appearance: none;
-  background-color: gainsboro;
   background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
   background-repeat: no-repeat;
   background-position: right 1rem center;
