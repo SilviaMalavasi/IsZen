@@ -50,12 +50,27 @@ export function gsapAnimations() {
         let this_height = $(fade_in_up).outerHeight();
         $(fade_in_up).css("height", this_height);
 
-        const fade_in_up_anim = gsap.to(fade_in_up, {
+        let hasChildAnimation = $(fade_in_up).hasClass("child-animation");
+        let fade_in_up_anim_child;
+        if (hasChildAnimation) {
+          let fade_in_up_child = $(fade_in_up).find("img");
+          fade_in_up_anim_child = gsap.to(fade_in_up_child[0], {
+            scale: "1",
+            duration: 1.5,
+          });
+        }
+
+        const fade_in_up_anim_parent = gsap.to(fade_in_up, {
           y: "0",
           opacity: "1",
           duration: 1.5,
-          paused: true,
         });
+
+        const fade_in_up_anim = gsap.timeline({ paused: true });
+        fade_in_up_anim.add(fade_in_up_anim_parent);
+        if (hasChildAnimation) {
+          fade_in_up_anim.add(fade_in_up_anim_child, "<");
+        }
 
         ScrollTrigger.create({
           trigger: fade_in_up,
@@ -80,33 +95,50 @@ export function gsapAnimations() {
     // Fade in left
 
     if ($(".fade-in-left").length) {
-      const in_lefts = gsap.utils.toArray(".fade-in-left");
-      in_lefts.forEach((in_left) => {
-        let this_height = $(in_left).outerHeight();
-        $(in_left).css("height", this_height);
+      const fade_in_lefts = gsap.utils.toArray(".fade-in-left");
+      fade_in_lefts.forEach((fade_in_left) => {
+        let this_height = $(fade_in_left).outerHeight();
+        $(fade_in_left).css("height", this_height);
 
-        const in_left_anim = gsap.to(in_left, {
+        let hasChildAnimation = $(fade_in_left).hasClass("child-animation");
+        let fade_in_left_anim_child;
+        if (hasChildAnimation) {
+          let fade_in_left_child = $(fade_in_left).find("img");
+          fade_in_left_anim_child = gsap.to(fade_in_left_child[0], {
+            scale: "1",
+            duration: 1.5,
+          });
+        }
+
+        const fade_in_left_anim_parent = gsap.to(fade_in_left, {
           x: "0",
           opacity: 1,
-          duration: 1,
-          paused: true,
+          duration: 1.5,
         });
 
+        const fade_in_left_anim = gsap.timeline({ paused: true });
+        fade_in_left_anim.add(fade_in_left_anim_parent);
+        if (hasChildAnimation) {
+          fade_in_left_anim.add(fade_in_left_anim_child, "<");
+        }
+
         ScrollTrigger.create({
-          trigger: in_left,
+          trigger: fade_in_left,
           start: top_pos_animations,
-          onEnter: () => in_left_anim.play(),
+          onEnter: () => fade_in_left_anim.play(),
         });
 
         ScrollTrigger.create({
-          trigger: in_left,
+          trigger: fade_in_left,
           start: "top bottom",
-          onEnterBack: () => in_left_anim.restart(),
-          onLeaveBack: () => in_left_anim.pause(0),
+          onEnterBack: () => fade_in_left_anim.restart(),
+          onLeaveBack: () => fade_in_left_anim.pause(0),
         });
 
-        if ($(in_left)[0].getBoundingClientRect().top < window.innerHeight) {
-          in_left_anim.play();
+        if (
+          $(fade_in_left)[0].getBoundingClientRect().top < window.innerHeight
+        ) {
+          fade_in_left_anim.play();
         }
       });
     }
@@ -114,33 +146,50 @@ export function gsapAnimations() {
     // Fade in right
 
     if ($(".fade-in-right").length) {
-      const in_rights = gsap.utils.toArray(".fade-in-right");
-      in_rights.forEach((in_right) => {
-        let this_height = $(in_right).outerHeight();
-        $(in_right).css("height", this_height);
+      const fade_in_rights = gsap.utils.toArray(".fade-in-right");
+      fade_in_rights.forEach((fade_in_right) => {
+        let this_height = $(fade_in_right).outerHeight();
+        $(fade_in_right).css("height", this_height);
 
-        const in_right_anim = gsap.to(in_right, {
+        let hasChildAnimation = $(fade_in_right).hasClass("child-animation");
+        let fade_in_right_anim_child;
+        if (hasChildAnimation) {
+          let fade_in_right_child = $(fade_in_right).find("img");
+          fade_in_right_anim_child = gsap.to(fade_in_right_child[0], {
+            scale: "1",
+            duration: 1.5,
+          });
+        }
+
+        const fade_in_right_anim_parent = gsap.to(fade_in_right, {
           x: "0",
           opacity: 1,
-          duration: 1,
-          paused: true,
+          duration: 1.5,
         });
 
+        const fade_in_right_anim = gsap.timeline({ paused: true });
+        fade_in_right_anim.add(fade_in_right_anim_parent);
+        if (hasChildAnimation) {
+          fade_in_right_anim.add(fade_in_right_anim_child, "<");
+        }
+
         ScrollTrigger.create({
-          trigger: in_right,
+          trigger: fade_in_right,
           start: top_pos_animations,
-          onEnter: () => in_right_anim.play(),
+          onEnter: () => fade_in_right_anim.play(),
         });
 
         ScrollTrigger.create({
-          trigger: in_right,
+          trigger: fade_in_right,
           start: "top bottom",
-          onEnterBack: () => in_right_anim.restart(),
-          onLeaveBack: () => in_right_anim.pause(0),
+          onEnterBack: () => fade_in_right_anim.restart(),
+          onLeaveBack: () => fade_in_right_anim.pause(0),
         });
 
-        if ($(in_right)[0].getBoundingClientRect().top < window.innerHeight) {
-          in_right_anim.play();
+        if (
+          $(fade_in_right)[0].getBoundingClientRect().top < window.innerHeight
+        ) {
+          fade_in_right_anim.play();
         }
       });
     }
@@ -346,6 +395,23 @@ export function gsapAnimations() {
         start: "top bottom",
         onEnterBack: () => numeri_anim.restart(),
         onLeaveBack: () => numeri_anim.pause(0),
+      });
+    }
+
+    // Colore menu
+
+    if ($(".fondo-scuro").length) {
+      const scuri = gsap.utils.toArray(".fondo-scuro");
+      scuri.forEach((scuro) => {
+        ScrollTrigger.create({
+          trigger: scuro,
+          start: "top " + 5 * rem + "px",
+          end: "bottom " + 5 * rem + "px",
+          onEnter: () => $(".header-menu").addClass("menu-bianco"),
+          onLeave: () => $(".header-menu").removeClass("menu-bianco"),
+          onEnterBack: () => $(".header-menu").addClass("menu-bianco"),
+          onLeaveBack: () => $(".header-menu").removeClass("menu-bianco"),
+        });
       });
     }
   }

@@ -9,18 +9,40 @@
   transform: translate3d(0, 14rem, 0);
   will-change: transform;
   will-change: opacity;
+  overflow: hidden;
+  &.child-animation {
+    overflow: hidden;
+    img {
+      transform-origin: center center;
+      transform: scale(1.3);
+    }
+  }
 }
 .fade-in-left {
   opacity: 0;
   transform: translate3d(-7rem, 0, 0);
   will-change: transform;
   will-change: opacity;
+  &.child-animation {
+    overflow: hidden;
+    img {
+      transform-origin: center center;
+      transform: scale(1.3);
+    }
+  }
 }
 .fade-in-right {
   opacity: 0;
   transform: translate3d(7rem, 0, 0);
   will-change: transform;
   will-change: opacity;
+  &.child-animation {
+    overflow: hidden;
+    img {
+      transform-origin: center center;
+      transform: scale(1.3);
+    }
+  }
 }
 .fade-in-right-stagger-cont {
   height: auto;
