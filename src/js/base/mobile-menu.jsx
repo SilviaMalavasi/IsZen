@@ -1,6 +1,18 @@
 import $ from "jquery";
+import { doScrollSmoother } from "../base/scrollsmoother.jsx";
+import { mediaQueryAllMobile } from "./globals.jsx";
 
-export function mobileMenu() {
+export async function mobileMenu() {
+  const smoother = "";
+
+  if (!mediaQueryAllMobile) {
+    try {
+      smoother = await doScrollSmoother();
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
   $("#menuToggle").on("tap click", function () {
     $("#mobile-menu").toggleClass("open-menu");
   });
@@ -19,6 +31,17 @@ export function mobileMenu() {
           $("#mobile-menu").toggleClass("open-menu");
         }
       });
+    }
+
+    if (!mediaQueryAllMobile) {
+      $("body").toggleClass("fixed");
+      let scroll_amount = smoother.scrollTop();
+      if (smoother.paused()) {
+        smoother.paused(false);
+        smoother.scrollTop(scroll_amount);
+      } else {
+        smoother.paused(true);
+      }
     }
   });
 
