@@ -3,6 +3,10 @@
 :root {
   background-color: #ffffff;
 }
+.fixed {
+  position: fixed !important;
+  height: 100vh;
+}
 #header {
   position: relative;
   width: 100%;
