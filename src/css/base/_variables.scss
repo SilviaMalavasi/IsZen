@@ -1,3 +1,5 @@
+@use "../base/media-queries" as *;
+
 :root {
   --font-size-96pt: 4rem;
   --font-size-48pt: 3rem;
@@ -25,7 +27,7 @@
 
 // mediaQueryAllMobile
 
-@media screen and (max-width: 1024px) and (orientation: portrait) {
+@include mediaQueryAllMobile {
   :root {
     --font-size-30pt: max(14px, 1.87rem);
     --line-height-36pt: max(18px, 2.6rem);
@@ -41,7 +43,7 @@
 
 // mediaQueryPhonesAndSmallTabletsOnly
 
-@media screen and (max-width: 781px) {
+@include mediaQueryPhonesAndSmallTabletsOnly {
   :root {
     --menu-width: 40px;
     --menu-height: 3px;
@@ -50,5 +52,5 @@
 
 // mediaQueryBigTabletsOnly
 
-@media screen and (min-width: 782px) and (max-width: 1024px) and (orientation: portrait) {
+@include mediaQueryBigTabletsOnly {
 }

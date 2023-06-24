@@ -1,4 +1,5 @@
 @use "../base/mixins" as *;
+@use "../base/media-queries" as *;
 
 #mobile-menu {
   display: none;

@@ -1,4 +1,5 @@
 @use "../base/mixins" as *;
+@use "../base/media-queries" as *;
 
 .plain-page {
   padding: 6rem var(--padding-grande);

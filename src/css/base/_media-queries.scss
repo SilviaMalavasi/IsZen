@@ -1,0 +1,29 @@
+@mixin mediaQueryAllMobile {
+  @media screen and (max-width: 1024px) and (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin mediaQueryPhonesAndSmallTabletsOnly {
+  @media screen and (max-width: 781px) {
+    @content;
+  }
+}
+
+@mixin mediaQueryBigTabletsOnly {
+  @media screen and (min-width: 782px) and (max-width: 1024px) and (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin desktopOnly {
+  @media screen and (min-width: 1024px) and (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin smalldesktopOnly {
+  @media screen and (min-width: 1024px) and (max-width: 1439px) and (orientation: landscape) {
+    @content;
+  }
+}
