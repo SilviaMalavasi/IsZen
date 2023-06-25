@@ -32,6 +32,7 @@ export async function mobileMenu() {
         }
       });
     }
+    $("body").toggleClass("fixed");
 
     if (!mediaQueryAllMobile) {
       $("body").toggleClass("fixed");
