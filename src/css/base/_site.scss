@@ -5,8 +5,8 @@
   background-color: #ffffff;
 }
 .fixed {
-  position: fixed !important;
-  height: 100vh;
+  height: 100vh !important;
+  overflow: hidden !important;
 }
 #header {
   position: relative;

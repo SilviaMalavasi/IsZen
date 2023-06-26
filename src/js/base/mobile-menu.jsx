@@ -1,18 +1,8 @@
 import $ from "jquery";
-import { doScrollSmoother } from "../base/scrollsmoother.jsx";
+import { smoother } from "../base/scrollsmoother.jsx";
 import { mediaQueryAllMobile } from "./globals.jsx";
 
-export async function mobileMenu() {
-  const smoother = "";
-
-  if (!mediaQueryAllMobile) {
-    try {
-      smoother = await doScrollSmoother();
-    } catch (e) {
-      console.error(e);
-    }
-  }
-
+export function mobileMenu() {
   $("#menuToggle").on("tap click", function () {
     $("#mobile-menu").toggleClass("open-menu");
   });
@@ -32,10 +22,12 @@ export async function mobileMenu() {
         }
       });
     }
-    $("body").toggleClass("fixed");
 
-    if (!mediaQueryAllMobile) {
+    if (mediaQueryAllMobile) {
       $("body").toggleClass("fixed");
+    }
+
+    if (!mediaQueryAllMobile && !$(".home").length) {
       let scroll_amount = smoother.scrollTop();
       if (smoother.paused()) {
         smoother.paused(false);

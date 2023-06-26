@@ -1,11 +1,17 @@
-export async function doScrollSmoother() {
-  const { gsap } = await import("gsap");
-  const { ScrollTrigger } = await import("gsap/ScrollTrigger");
-  const { ScrollSmoother } = await import("gsap/ScrollSmoother");
+export var smoother;
+export function doScrollSmoother() {
+  async function loadScrollSmoother() {
+    const { gsap } = await import("gsap");
+    const { ScrollTrigger } = await import("gsap/ScrollTrigger");
+    const { ScrollSmoother } = await import("gsap/ScrollSmoother");
 
-  gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+    gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
-  const smoother = ScrollSmoother.create({
-    smooth: 1,
-  });
+    smoother = ScrollSmoother.create({
+      smooth: 1,
+      effects: true,
+    });
+  }
+
+  loadScrollSmoother();
 }
