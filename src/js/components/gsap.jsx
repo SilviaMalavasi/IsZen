@@ -1,4 +1,8 @@
-import { rem, top_pos_animations } from "../base/globals.jsx";
+import {
+  mediaQueryAllMobile,
+  rem,
+  top_pos_animations,
+} from "../base/globals.jsx";
 import $ from "jquery";
 
 export function gsapAnimations() {
@@ -50,14 +54,17 @@ export function gsapAnimations() {
         let this_height = $(fade_in_up).outerHeight();
         $(fade_in_up).css("height", this_height);
 
-        let hasChildAnimation = $(fade_in_up).hasClass("child-animation");
-        let fade_in_up_anim_child;
-        if (hasChildAnimation) {
-          let fade_in_up_child = $(fade_in_up).find("img");
-          fade_in_up_anim_child = gsap.to(fade_in_up_child[0], {
-            scale: "1",
-            duration: 1.5,
-          });
+        var hasChildAnimation = $(fade_in_up).hasClass("child-animation");
+        var fade_in_up_anim_child;
+
+        if (!mediaQueryAllMobile) {
+          if (hasChildAnimation) {
+            let fade_in_up_child = $(fade_in_up).find("img");
+            fade_in_up_anim_child = gsap.to(fade_in_up_child[0], {
+              scale: "1",
+              duration: 1.5,
+            });
+          }
         }
 
         const fade_in_up_anim_parent = gsap.to(fade_in_up, {
@@ -68,8 +75,11 @@ export function gsapAnimations() {
 
         const fade_in_up_anim = gsap.timeline({ paused: true });
         fade_in_up_anim.add(fade_in_up_anim_parent);
-        if (hasChildAnimation) {
-          fade_in_up_anim.add(fade_in_up_anim_child, "<");
+
+        if (!mediaQueryAllMobile) {
+          if (hasChildAnimation) {
+            fade_in_up_anim.add(fade_in_up_anim_child, "<");
+          }
         }
 
         ScrollTrigger.create({
@@ -100,14 +110,17 @@ export function gsapAnimations() {
         let this_height = $(fade_in_left).outerHeight();
         $(fade_in_left).css("height", this_height);
 
-        let hasChildAnimation = $(fade_in_left).hasClass("child-animation");
-        let fade_in_left_anim_child;
-        if (hasChildAnimation) {
-          let fade_in_left_child = $(fade_in_left).find("img");
-          fade_in_left_anim_child = gsap.to(fade_in_left_child[0], {
-            scale: "1",
-            duration: 1.5,
-          });
+        var hasChildAnimation = $(fade_in_left).hasClass("child-animation");
+        var fade_in_left_anim_child;
+
+        if (!mediaQueryAllMobile) {
+          if (hasChildAnimation) {
+            let fade_in_left_child = $(fade_in_left).find("img");
+            fade_in_left_anim_child = gsap.to(fade_in_left_child[0], {
+              scale: "1",
+              duration: 1.5,
+            });
+          }
         }
 
         const fade_in_left_anim_parent = gsap.to(fade_in_left, {
@@ -118,8 +131,11 @@ export function gsapAnimations() {
 
         const fade_in_left_anim = gsap.timeline({ paused: true });
         fade_in_left_anim.add(fade_in_left_anim_parent);
-        if (hasChildAnimation) {
-          fade_in_left_anim.add(fade_in_left_anim_child, "<");
+
+        if (!mediaQueryAllMobile) {
+          if (hasChildAnimation) {
+            fade_in_left_anim.add(fade_in_left_anim_child, "<");
+          }
         }
 
         ScrollTrigger.create({
@@ -151,14 +167,17 @@ export function gsapAnimations() {
         let this_height = $(fade_in_right).outerHeight();
         $(fade_in_right).css("height", this_height);
 
-        let hasChildAnimation = $(fade_in_right).hasClass("child-animation");
-        let fade_in_right_anim_child;
-        if (hasChildAnimation) {
-          let fade_in_right_child = $(fade_in_right).find("img");
-          fade_in_right_anim_child = gsap.to(fade_in_right_child[0], {
-            scale: "1",
-            duration: 1.5,
-          });
+        var hasChildAnimation = $(fade_in_right).hasClass("child-animation");
+        var fade_in_right_anim_child;
+
+        if (!mediaQueryAllMobile) {
+          if (hasChildAnimation) {
+            let fade_in_right_child = $(fade_in_right).find("img");
+            fade_in_right_anim_child = gsap.to(fade_in_right_child[0], {
+              scale: "1",
+              duration: 1.5,
+            });
+          }
         }
 
         const fade_in_right_anim_parent = gsap.to(fade_in_right, {
@@ -169,8 +188,11 @@ export function gsapAnimations() {
 
         const fade_in_right_anim = gsap.timeline({ paused: true });
         fade_in_right_anim.add(fade_in_right_anim_parent);
-        if (hasChildAnimation) {
-          fade_in_right_anim.add(fade_in_right_anim_child, "<");
+
+        if (!mediaQueryAllMobile) {
+          if (hasChildAnimation) {
+            fade_in_right_anim.add(fade_in_right_anim_child, "<");
+          }
         }
 
         ScrollTrigger.create({
@@ -400,7 +422,10 @@ export function gsapAnimations() {
 
     // Colore menu
 
-    if ($(".fondo-scuro").length) {
+    if (
+      $(".fondo-scuro").length &&
+      ((!mediaQueryAllMobile && !$(".home").length) || mediaQueryAllMobile)
+    ) {
       const scuri = gsap.utils.toArray(".fondo-scuro");
       scuri.forEach((scuro) => {
         ScrollTrigger.create({
@@ -412,6 +437,10 @@ export function gsapAnimations() {
           onEnterBack: () => $(".header-menu").addClass("menu-bianco"),
           onLeaveBack: () => $(".header-menu").removeClass("menu-bianco"),
         });
+
+        if (scuro.getBoundingClientRect().top < window.innerHeight) {
+          $(".header-menu").addClass("menu-bianco");
+        }
       });
     }
   }

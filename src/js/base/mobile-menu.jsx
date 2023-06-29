@@ -27,7 +27,7 @@ export function mobileMenu() {
       $("body").toggleClass("fixed");
     }
 
-    if (!mediaQueryAllMobile && !$(".home").length) {
+    if (!mediaQueryAllMobile) {
       let scroll_amount = smoother.scrollTop();
       if (smoother.paused()) {
         smoother.paused(false);

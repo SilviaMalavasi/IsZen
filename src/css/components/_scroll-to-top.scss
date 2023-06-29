@@ -18,7 +18,9 @@
   svg {
     transition: all 0.3s var(--easing);
   }
-  &:hover > svg {
-    transform: scale(1.1);
+  @include hover {
+    & > svg {
+      transform: scale(1.1);
+    }
   }
 }
