@@ -7,6 +7,7 @@ import { mobileMenu } from "./base/mobile-menu.jsx";
 import { scrollToTarget, scrollToTop } from "./components/scroll-to.jsx";
 import { gsapAnimations } from "./components/gsap.jsx";
 import { mediaQueryAllMobile } from "./base/globals.jsx";
+import { iubendaObserver } from "./components/iubenda-observer.jsx";
 
 if (!mediaQueryAllMobile) {
   doScrollSmoother();
@@ -26,10 +27,14 @@ $(function () {
     $(".fade-in-right-stagger-cont").length ||
     $(".fade-in-up-stagger-cont").length ||
     $(".fade-in-left-stagger-cont").length ||
-    $(".blocco-numeri").length
+    $(".blocco-numeri").length ||
+    $(".fondo-scuro").length
   ) {
     gsapAnimations();
   }
 
+  if ($(".video-iframe").length) {
+    iubendaObserver();
+  }
   removeAltOnHover();
 }); // Chiudi document ready

@@ -422,10 +422,7 @@ export function gsapAnimations() {
 
     // Colore menu
 
-    if (
-      $(".fondo-scuro").length &&
-      ((!mediaQueryAllMobile && !$(".home").length) || mediaQueryAllMobile)
-    ) {
+    if ($(".fondo-scuro").length) {
       const scuri = gsap.utils.toArray(".fondo-scuro");
       scuri.forEach((scuro) => {
         ScrollTrigger.create({
