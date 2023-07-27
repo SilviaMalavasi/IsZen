@@ -3,6 +3,10 @@ import $ from "jquery";
 
 export async function playVimeo(video) {
   if ($(".video-iframe").length) {
+    let width = $(video).attr("data-width");
+    let height = $(video).attr("data-height");
+    $(video).css("padding-top", (height / width) * 100 + "%");
+
     const { default: Player } = await import("@vimeo/player");
     var player = new Player(video);
     player.setVolume(0);
