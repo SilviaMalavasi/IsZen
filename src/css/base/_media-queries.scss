@@ -10,6 +10,12 @@
   }
 }
 
+@mixin mediaQuerySmallTabletsOnly {
+  @media screen and (min-width: 400px) and (max-width: 781px) and (orientation: portrait) {
+    @content;
+  }
+}
+
 @mixin mediaQueryBigTabletsOnly {
   @media screen and (min-width: 782px) and (max-width: 1024px) and (orientation: portrait) {
     @content;

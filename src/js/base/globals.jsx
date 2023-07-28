@@ -9,6 +9,9 @@ export const mediaQueryAllMobile =
 export const mediaQueryPhonesAndSmallTabletsOnly = window.matchMedia(
   "(max-width:781px)"
 ).matches;
+export const mediaQueryBigSmallTabletsOnly = window.matchMedia(
+  "(min-width: 400px) and (max-width: 781px) and (orientation: portrait)"
+).matches;
 export const mediaQueryBigTabletsOnly = window.matchMedia(
   "(min-width: 782px) and (max-width: 1024px) and (orientation: portrait)"
 ).matches;
