@@ -18,9 +18,6 @@ export function gsapAnimations() {
     if ($(".fade-in").length) {
       const fade_ins = gsap.utils.toArray(".fade-in");
       fade_ins.forEach((fade_in) => {
-        let this_height = $(fade_in).outerHeight();
-        $(fade_in).css("height", this_height);
-
         const fade_in_anim = gsap.to(fade_in, {
           opacity: 1,
           duration: 1,
@@ -51,9 +48,6 @@ export function gsapAnimations() {
     if ($(".fade-in-up").length) {
       const fade_in_ups = gsap.utils.toArray(".fade-in-up");
       fade_in_ups.forEach((fade_in_up) => {
-        let this_height = $(fade_in_up).outerHeight();
-        $(fade_in_up).css("height", this_height);
-
         var hasChildAnimation = $(fade_in_up).hasClass("child-animation");
         var fade_in_up_anim_child;
 
@@ -107,9 +101,6 @@ export function gsapAnimations() {
     if ($(".fade-in-left").length) {
       const fade_in_lefts = gsap.utils.toArray(".fade-in-left");
       fade_in_lefts.forEach((fade_in_left) => {
-        let this_height = $(fade_in_left).outerHeight();
-        $(fade_in_left).css("height", this_height);
-
         var hasChildAnimation = $(fade_in_left).hasClass("child-animation");
         var fade_in_left_anim_child;
 
@@ -164,9 +155,6 @@ export function gsapAnimations() {
     if ($(".fade-in-right").length) {
       const fade_in_rights = gsap.utils.toArray(".fade-in-right");
       fade_in_rights.forEach((fade_in_right) => {
-        let this_height = $(fade_in_right).outerHeight();
-        $(fade_in_right).css("height", this_height);
-
         var hasChildAnimation = $(fade_in_right).hasClass("child-animation");
         var fade_in_right_anim_child;
 
@@ -223,9 +211,6 @@ export function gsapAnimations() {
         const fade_in_stagger = $(this);
         const fade_in_this_stagger = $(this).find(".fade-in-stagger");
 
-        let this_height = $(fade_in_this_stagger).outerHeight();
-        $(fade_in_this_stagger).css("height", this_height);
-
         const fade_in_stagger_anim = gsap.to(fade_in_this_stagger, {
           duration: 1,
           opacity: 1,
@@ -267,9 +252,6 @@ export function gsapAnimations() {
           ".fade-in-right-stagger"
         );
 
-        let this_height = $(fade_in_right_this_stagger).outerHeight();
-        $(fade_in_right_this_stagger).css("height", this_height);
-
         const fade_in_right_stagger_anim = gsap.to(fade_in_right_this_stagger, {
           duration: 1,
           opacity: 1,
@@ -310,9 +292,6 @@ export function gsapAnimations() {
         const fade_in_left_stagger = $(this);
         const fade_in_left_this_stagger = $(this).find(".fade-in-left-stagger");
 
-        let this_height = $(fade_in_left_this_stagger).outerHeight();
-        $(fade_in_left_this_stagger).css("height", this_height);
-
         const fade_in_left_stagger_anim = gsap.to(fade_in_left_this_stagger, {
           duration: 1,
           opacity: 1,
@@ -352,9 +331,6 @@ export function gsapAnimations() {
       $(".fade-in-up-stagger-cont").each(function () {
         const fade_in_up_stagger = $(this);
         const fade_in_up_this_stagger = $(this).find(".fade-in-up-stagger");
-
-        let this_height = $(fade_in_up_this_stagger).outerHeight();
-        $(fade_in_up_this_stagger).css("height", this_height);
 
         const fade_in_up_stagger_anim = gsap.to(fade_in_up_this_stagger, {
           duration: 1,
