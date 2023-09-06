@@ -5,6 +5,20 @@ import { mediaQueryAllMobile } from "./globals.jsx";
 export function mobileMenu() {
   $("#menuToggle").on("tap click", function () {
     $("#mobile-menu").toggleClass("open-menu");
+
+    if (mediaQueryAllMobile) {
+      $("body").toggleClass("fixed");
+    }
+
+    if (!mediaQueryAllMobile) {
+      let scroll_amount = smoother.scrollTop();
+      if (smoother.paused()) {
+        smoother.paused(false);
+        smoother.scrollTop(scroll_amount);
+      } else {
+        smoother.paused(true);
+      }
+    }
   });
 
   $(document).on("tap click", function (event) {
@@ -21,20 +35,6 @@ export function mobileMenu() {
           $("#mobile-menu").toggleClass("open-menu");
         }
       });
-    }
-
-    if (mediaQueryAllMobile) {
-      $("body").toggleClass("fixed");
-    }
-
-    if (!mediaQueryAllMobile) {
-      let scroll_amount = smoother.scrollTop();
-      if (smoother.paused()) {
-        smoother.paused(false);
-        smoother.scrollTop(scroll_amount);
-      } else {
-        smoother.paused(true);
-      }
     }
   });
 
