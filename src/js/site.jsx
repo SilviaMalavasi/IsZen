@@ -16,6 +16,12 @@ scrollToTop();
 scrollToTarget();
 mobileMenu();
 
+if (!mediaQueryAllMobile) {
+  window.onresize = function () {
+    location.reload();
+  };
+}
+
 // Apri document ready
 
 $(function () {
