@@ -1,3 +1,4 @@
+import $ from "jquery";
 import swiperCss from "bundle-text:swiper/swiper-bundle.min.css";
 
 export function gallery() {
