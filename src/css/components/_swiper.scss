@@ -1,0 +1,12 @@
+@use "../base/mixins" as *;
+@use "../base/media-queries" as *;
+
+:root {
+  --swiper-pagination-color: var(--arancio);
+  --swiper-pagination-bullet-inactive-color: var(--grigio);
+  --swiper-pagination-bullet-width: 0.5rem;
+  --swiper-pagination-bullet-height: 0.5rem;
+  --swiper-pagination-bullet-horizontal-gap: 0.2rem;
+  --swiper-pagination-bullet-opacity: 1;
+  --swiper-pagination-bullet-inactive-opacity: 1;
+}
