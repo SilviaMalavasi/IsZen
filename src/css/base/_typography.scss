@@ -164,8 +164,15 @@ em {
   &:-webkit-autofill:hover,
   &:-webkit-autofill:focus,
   &:-webkit-autofill:active {
+    font-family: "Lato", sans-serif;
+    @include font(25);
     color: white;
+    color: black;
+    background-color: white !important;
     transition: background-color 5000s ease-in-out 0s;
+    -webkit-box-shadow: 0 0 0 1000px white inset !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
   }
   &:-webkit-autofill {
     -webkit-text-fill-color: white !important;
