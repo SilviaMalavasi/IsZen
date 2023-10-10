@@ -1,20 +1,26 @@
             </main><!-- #main -->
-        </div><!-- #primary -->
-    </div><!-- #content -->
+            </div><!-- #primary -->
+            </div><!-- #content -->
 
-    <footer id="footer" class="site-footer" role="contentinfo">
-        <div id="copyright">
-        &copy; <?php echo esc_html( date_i18n( __( 'Y', 'iszen' ) ) ); ?> <?php echo esc_html( get_bloginfo( 'name' ) ); ?>
-        </div>
-    </footer>
+            <footer id="footer" class="site-footer" role="contentinfo">
+                <?php
+                $footer_query = new WP_Query(array('page_id' => 24));
+                while ($footer_query->have_posts()) {
+                    $footer_query->the_post();
+                    the_content();
+                }
+                wp_reset_postdata();
+                ?>
+            </footer>
 
 
-</div><!-- #page -->
+            </div><!-- #page -->
 
-<?php wp_footer(); ?>
+            <?php wp_footer(); ?>
 
-</div><!-- #smooth-content -->
-</div><!-- #smooth-wrapper -->
+            </div><!-- #smooth-content -->
+            </div><!-- #smooth-wrapper -->
 
-</body>
-</html>
+            </body>
+
+            </html>
