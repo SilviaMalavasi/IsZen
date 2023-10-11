@@ -1,0 +1,12 @@
+{
+  "name": "acf/video-fullscreen",
+  "title": "Video fullscreen",
+  "description": "Video fullscreen",
+  "category": "iszen",
+  "icon": "format-video",
+  "keywords": ["video"],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "video-fullscreen.php"
+  }
+}

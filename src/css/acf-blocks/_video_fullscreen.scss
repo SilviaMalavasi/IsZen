@@ -1,0 +1,33 @@
+@use "../base/mixins" as *;
+@use "../base/media-queries" as *;
+
+.video-fullscreen {
+  width: 100%;
+  overflow: hidden;
+  .video-iframe {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%;
+  }
+  .video-iframe iframe {
+    position: absolute;
+    top: 0;
+    left: -1px;
+    bottom: 0;
+    right: 0;
+    width: calc(100% + 2px);
+    height: 100%;
+  }
+  .video-desktop {
+    @include mediaQueryPhonesAndSmallTabletsOnly {
+      display: none;
+    }
+  }
+  .video-mobile {
+    display: none;
+    @include mediaQueryPhonesAndSmallTabletsOnly {
+      display: block;
+    }
+  }
+}

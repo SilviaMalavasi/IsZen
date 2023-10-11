@@ -59,17 +59,6 @@ function iszen_register_menus()
 }
 
 
-/* Add search to menu */
-
-add_filter('wp_nav_menu_items', 'iszen_add_search_form', 10, 2);
-function iszen_add_search_form($items, $args)
-{
-    if ($args->theme_location == 'main-menu')
-        $items .= '<li class="search"><form role="search" method="get" id="searchform" action="' . home_url('/') . '"><input type="text" value="cerca nel sito" name="s" id="s" /><input type="submit" id="searchsubmit" value="' . esc_attr__('Search') . '" /></form></li>';
-    return $items;
-}
-
-
 /* Add slug to body_class() */
 
 add_filter('body_class', 'add_slug_class');
@@ -130,21 +119,19 @@ function iszen_nested_comment()
     }
 }
 
+/* Add search to menu */
+
+add_filter('wp_nav_menu_items', 'iszen_add_search_form', 10, 2);
+function iszen_add_search_form($items, $args)
+{
+    if ($args->theme_location == 'main-menu')
+        $items .= '<li class="search"><form role="search" method="get" id="searchform" action="' . home_url('/') . '"><input type="text" value="cerca nel sito" name="s" id="s" /><input type="submit" id="searchsubmit" value="' . esc_attr__('Search') . '" /></form></li>';
+    return $items;
+}
+
+
 
 // ACF //
-
-/* Add slug to body_class() */
-
-add_filter('body_class', 'iszen_add_slug_class');
-function iszen_add_slug_class($classes)
-{
-    $additional = 'page-slug-' . get_post_field('post_name', get_post());
-    foreach ($classes as $class) {
-        array_push($classes, $additional);
-        break;
-    }
-    return $classes;
-}
 
 
 /* Block category */
@@ -153,8 +140,8 @@ add_filter('block_categories_all', 'iszen_block_categories');
 function iszen_block_categories($categories)
 {
     array_unshift($categories, array(
-        'slug'  => 'iszen_home',
-        'title' => 'iszen Home'
+        'slug'  => 'iszen',
+        'title' => 'IsZen'
     ));
     return $categories;
 };
@@ -193,5 +180,5 @@ function iszen_acf_wysiwyg_remove_wpautop()
 add_action('init', 'iszen_register_acf_blocks');
 function iszen_register_acf_blocks()
 {
-    register_block_type(__DIR__ . '/acf-blocks/home-titolo');
+    register_block_type(__DIR__ . '/acf-blocks/video-fullscreen');
 }
