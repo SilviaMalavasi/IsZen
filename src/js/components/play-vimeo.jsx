@@ -44,5 +44,9 @@ export async function playVimeo(video) {
       },
       toggleActions: "play pause reverse none",
     });
+
+    if (video.getBoundingClientRect().top < window.innerHeight) {
+      player.play();
+    }
   }
 }
