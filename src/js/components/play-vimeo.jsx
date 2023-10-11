@@ -1,4 +1,3 @@
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import $ from "jquery";
 
 export async function playVimeo(video) {
@@ -8,15 +7,17 @@ export async function playVimeo(video) {
     $(video).css("padding-top", (height / width) * 100 + "%");
 
     const { default: Player } = await import("@vimeo/player");
+    const { gsap } = await import("gsap");
+    const { ScrollTrigger } = await import("gsap/ScrollTrigger");
+
+    gsap.registerPlugin(ScrollTrigger);
+
     var player = new Player(video);
     player.setVolume(0);
     player.pause();
 
     var isPlaying =
-      player.currentTime > 0 &&
-      !player.paused &&
-      !player.ended &&
-      player.readyState > player.HAVE_CURRENT_DATA;
+      player.currentTime > 0 && !player.paused && !player.ended && player.readyState > player.HAVE_CURRENT_DATA;
     var start = "top 70%";
     var end = "bottom top";
 

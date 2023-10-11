@@ -8,7 +8,10 @@ export async function iubendaObserver() {
       let target = $(this)[0];
 
       var observer = new MutationObserver(function (mutations) {
-        playVimeo(target);
+        if ($(mutations[mutations.length - 1].addedNodes[0]).hasClass("_iub_cs_activate-activated")) {
+          playVimeo(target);
+          observer.disconnect;
+        }
       });
 
       observer.observe(target, {
@@ -16,10 +19,6 @@ export async function iubendaObserver() {
         childList: true,
         characterData: true,
       });
-
-      setTimeout(function () {
-        observer.disconnect;
-      }, 10000);
     });
   }
 }
