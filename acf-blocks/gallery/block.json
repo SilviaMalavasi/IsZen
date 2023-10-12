@@ -1,0 +1,12 @@
+{
+  "name": "acf/gallery",
+  "title": "Gallery",
+  "description": "Galleria immagini",
+  "category": "orione",
+  "icon": "format-gallery",
+  "keywords": ["gallery", "immagini"],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "gallery.php"
+  }
+}

@@ -181,4 +181,5 @@ add_action('init', 'iszen_register_acf_blocks');
 function iszen_register_acf_blocks()
 {
     register_block_type(__DIR__ . '/acf-blocks/video-fullscreen');
+    register_block_type(__DIR__ . '/acf-blocks/gallery');
 }
