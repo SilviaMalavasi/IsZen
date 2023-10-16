@@ -9,17 +9,14 @@
 }
 
 @mixin font($font-pt) {
-  @if $font-pt == 500 {
-    font-size: var(--font-size-500pt);
+  @if $font-pt == 96 {
+    font-size: var(--font-size-96pt);
     line-height: 1em;
-  } @else if $font-pt == 84 {
-    font-size: var(--font-size-84pt);
-    line-height: 1em;
-  } @else if $font-pt == 64 {
-    font-size: var(--font-size-64pt);
+  } @else if $font-pt == 48 {
+    font-size: var(--font-size-48pt);
     line-height: 1.5em;
-  } @else if $font-pt == 32 {
-    font-size: var(--font-size-32pt);
+  } @else if $font-pt == 30 {
+    font-size: var(--font-size-30pt);
     line-height: 1.5em;
   } @else if $font-pt == 24 {
     font-size: var(--font-size-24pt);
@@ -30,8 +27,8 @@
   } @else if $font-pt == 16 {
     font-size: var(--font-size-16pt);
     line-height: 1.87em;
-  } @else if $font-pt == 14 {
-    font-size: var(--font-size-14pt);
+  } @else if $font-pt == 12 {
+    font-size: var(--font-size-12pt);
     line-height: 1.3em;
   }
 }
