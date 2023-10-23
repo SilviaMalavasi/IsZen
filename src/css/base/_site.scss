@@ -1,9 +1,6 @@
 @use "../base/mixins" as *;
 @use "../base/media-queries" as *;
 
-:root {
-  background-color: #ffffff;
-}
 .fixed {
   height: 100vh !important;
   overflow: hidden !important;
