@@ -32,10 +32,6 @@ export function gsapAnimations() {
           onEnterBack: () => fade_in_anim.restart(),
           onLeaveBack: () => fade_in_anim.pause(0),
         });
-
-        if (fade_in.getBoundingClientRect().top < window.innerHeight) {
-          fade_in_anim.play();
-        }
       });
     }
 
@@ -85,10 +81,6 @@ export function gsapAnimations() {
           onEnterBack: () => fade_in_up_anim.restart(),
           onLeaveBack: () => fade_in_up_anim.pause(0),
         });
-
-        if (fade_in_up.getBoundingClientRect().top < window.innerHeight) {
-          fade_in_up_anim.play();
-        }
       });
     }
 
@@ -137,10 +129,6 @@ export function gsapAnimations() {
           onEnterBack: () => fade_in_left_anim.restart(),
           onLeaveBack: () => fade_in_left_anim.pause(0),
         });
-
-        if ($(fade_in_left)[0].getBoundingClientRect().top < window.innerHeight) {
-          fade_in_left_anim.play();
-        }
       });
     }
 
@@ -189,10 +177,6 @@ export function gsapAnimations() {
           onEnterBack: () => fade_in_right_anim.restart(),
           onLeaveBack: () => fade_in_right_anim.pause(0),
         });
-
-        if ($(fade_in_right)[0].getBoundingClientRect().top < window.innerHeight) {
-          fade_in_right_anim.play();
-        }
       });
     }
 
@@ -228,10 +212,6 @@ export function gsapAnimations() {
           onEnterBack: () => fade_in_stagger_anim.restart(),
           onLeaveBack: () => fade_in_stagger_anim.pause(0),
         });
-
-        if ($(this)[0].getBoundingClientRect().top < window.innerHeight) {
-          fade_in_stagger_anim.play();
-        }
       });
     }
 
@@ -268,10 +248,6 @@ export function gsapAnimations() {
           onEnterBack: () => fade_in_right_stagger_anim.restart(),
           onLeaveBack: () => fade_in_right_stagger_anim.pause(0),
         });
-
-        if ($(this)[0].getBoundingClientRect().top < window.innerHeight) {
-          fade_in_right_stagger_anim.play();
-        }
       });
     }
 
@@ -308,10 +284,6 @@ export function gsapAnimations() {
           onEnterBack: () => fade_in_left_stagger_anim.restart(),
           onLeaveBack: () => fade_in_left_stagger_anim.pause(0),
         });
-
-        if ($(this)[0].getBoundingClientRect().top < window.innerHeight) {
-          fade_in_left_stagger_anim.play();
-        }
       });
     }
 
@@ -348,10 +320,6 @@ export function gsapAnimations() {
           onEnterBack: () => fade_in_up_stagger_anim.restart(),
           onLeaveBack: () => fade_in_up_stagger_anim.pause(0),
         });
-
-        if ($(this)[0].getBoundingClientRect().top < window.innerHeight) {
-          fade_in_up_stagger_anim.play();
-        }
       });
     }
 
@@ -400,10 +368,6 @@ export function gsapAnimations() {
           onEnterBack: () => $(".header-menu").addClass("menu-bianco"),
           onLeaveBack: () => $(".header-menu").removeClass("menu-bianco"),
         });
-
-        if (scuro.getBoundingClientRect().top < window.innerHeight) {
-          $(".header-menu").addClass("menu-bianco");
-        }
       });
     }
   }
