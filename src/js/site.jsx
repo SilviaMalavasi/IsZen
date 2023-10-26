@@ -25,22 +25,26 @@ if (!mediaQueryAllMobile) {
 // Apri document ready
 
 $(function () {
-  if (
-    $(".fade-in").length ||
-    $(".fade-in-up").length ||
-    $(".fade-in-left").length ||
-    $(".fade-in-right").length ||
-    $(".fade-in-right-stagger-cont").length ||
-    $(".fade-in-up-stagger-cont").length ||
-    $(".fade-in-left-stagger-cont").length ||
-    $(".blocco-numeri").length ||
-    $(".fondo-scuro").length
-  ) {
-    gsapAnimations();
-  }
-
   if ($(".video-iframe").length) {
     iubendaObserver();
   }
   removeAltOnHover();
 }); // Chiudi document ready
+
+document.addEventListener("DOMContentLoaded", function (event) {
+  window.onload = function () {
+    if (
+      $(".fade-in").length ||
+      $(".fade-in-up").length ||
+      $(".fade-in-left").length ||
+      $(".fade-in-right").length ||
+      $(".fade-in-right-stagger-cont").length ||
+      $(".fade-in-up-stagger-cont").length ||
+      $(".fade-in-left-stagger-cont").length ||
+      $(".blocco-numeri").length ||
+      $(".fondo-scuro").length
+    ) {
+      gsapAnimations();
+    }
+  };
+});
